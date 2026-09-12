@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+
+
+<!-- Indique au téléphone de charger l'image en priorité absolue -->
+    <link rel="preload" as="image" href="images/Illustration ferme 1.jpg">
+
+</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte Interactive - Ferme de Chevronsart</title>
@@ -63,37 +68,40 @@
 
     <!-- 2. On l'applique sur notre carte -->
     <script>
-        window.addEventListener('load', function() {
+        const imageCarte = document.getElementById('carte-ferme');
+        
+        function initialiserCarte() {
             const mapContainer = document.querySelector('.map-container');
             const centre = document.getElementById('centre-carte');
             const mainZone = document.querySelector('main');
             
-            // Activation de la magie (Pan/Zoom)
             const monPanzoom = Panzoom(mapContainer, {
-                maxScale: 3,      // Zoom maximum (3 fois la taille)
-                minScale: 0.3,    // Dézoom maximum (pour voir toute la ferme)
-                step: 0.1,        // Vitesse du zoom
-                animate: true     // Rend les mouvements doux et fluides
+                maxScale: 3,
+                minScale: 0.3,
+                step: 0.1,
+                animate: true
             });
 
-            // Permet aussi de zoomer avec la molette de la souris sur un ordinateur
             mapContainer.parentElement.addEventListener('wheel', monPanzoom.zoomWithWheel);
 
-            // Centrage automatique de départ (petit calcul mathématique)
+            // Centrage
             setTimeout(function() {
                 if (centre && mainZone) {
                     const rect = centre.getBoundingClientRect();
                     const mainRect = mainZone.getBoundingClientRect();
-                    
-                    // On calcule de combien on doit décaler la carte pour centrer ton bâtiment
                     const moveX = (mainRect.width / 2) - (rect.left + rect.width / 2);
                     const moveY = (mainRect.height / 2) - (rect.top + rect.height / 2);
-                    
-                    // On lance le déplacement !
                     monPanzoom.pan(moveX, moveY);
                 }
-            }, 100); 
-        });
+            }, 50); // On a réduit le délai d'attente à 50ms !
+        }
+
+        // On lance le centrage dès que l'image précise est chargée (plus rapide que d'attendre toute la page)
+        if (imageCarte.complete) {
+            initialiserCarte();
+        } else {
+            imageCarte.addEventListener('load', initialiserCarte);
+        }
     </script>
 </body>
 </html>
