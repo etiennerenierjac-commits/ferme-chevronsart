@@ -39,28 +39,9 @@ header p {
     font-style: italic;
 }
 
+
+
 /* =========================================
-   3. CARTE INTERACTIVE (ZONE QUI DÉFILE)
-   ========================================= */
-main {
-    flex-grow: 1; /* Prend toute la place restante sous le titre */
-    overflow: auto; /* C'est cette zone qui glisse sous le doigt ! */
-    -webkit-overflow-scrolling: touch; /* Glissement ultra-fluide sur iPhone */
-    position: relative;
-}
-
-.map-container {
-    position: relative; 
-    width: max-content; 
-    min-width: 800px; /* Assez grand pour voir les détails */
-    margin: 0 auto; 
-}
-
-.map-container img {
-    display: block;
-    width: 100%;
-    height: auto; 
-}/* =========================================
    4. PAGES D'EXPLICATIONS (LES SOUS-PAGES)
    ========================================= */
 .page-contenu {
