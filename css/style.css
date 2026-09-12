@@ -43,7 +43,7 @@ header {
 /* =========================================
    3. CARTE INTERACTIVE (ZONE PANZOOM)
    ========================================= */
-main {
+body.page-carte main {
     flex-grow: 1; 
     overflow: hidden; 
     position: relative;
