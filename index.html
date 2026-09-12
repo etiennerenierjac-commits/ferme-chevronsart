@@ -58,25 +58,41 @@
         </div>
     </main>
 
-<!-- Script pour centrer la carte au chargement -->
+<!-- 1. On charge le moteur de zoom depuis internet -->
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+
+    <!-- 2. On l'applique sur notre carte -->
     <script>
         window.addEventListener('load', function() {
+            const mapContainer = document.querySelector('.map-container');
+            const centre = document.getElementById('centre-carte');
+            const mainZone = document.querySelector('main');
+            
+            // Activation de la magie (Pan/Zoom)
+            const monPanzoom = Panzoom(mapContainer, {
+                maxScale: 3,      // Zoom maximum (3 fois la taille)
+                minScale: 0.3,    // Dézoom maximum (pour voir toute la ferme)
+                step: 0.1,        // Vitesse du zoom
+                animate: true     // Rend les mouvements doux et fluides
+            });
+
+            // Permet aussi de zoomer avec la molette de la souris sur un ordinateur
+            mapContainer.parentElement.addEventListener('wheel', monPanzoom.zoomWithWheel);
+
+            // Centrage automatique de départ (petit calcul mathématique)
             setTimeout(function() {
-                const centre = document.getElementById('centre-carte');
-                const scrollZone = document.querySelector('main'); // La nouvelle boîte qui glisse
-                
-                if (centre && scrollZone) {
-                    const position = centre.getBoundingClientRect();
-                    const zonePosition = scrollZone.getBoundingClientRect();
+                if (centre && mainZone) {
+                    const rect = centre.getBoundingClientRect();
+                    const mainRect = mainZone.getBoundingClientRect();
                     
-                    // Calcul mathématique précis du centre
-                    const centreX = scrollZone.scrollLeft + position.left - zonePosition.left - (scrollZone.clientWidth / 2);
-                    const centreY = scrollZone.scrollTop + position.top - zonePosition.top - (scrollZone.clientHeight / 2);
+                    // On calcule de combien on doit décaler la carte pour centrer ton bâtiment
+                    const moveX = (mainRect.width / 2) - (rect.left + rect.width / 2);
+                    const moveY = (mainRect.height / 2) - (rect.top + rect.height / 2);
                     
-                    // Effectue le déplacement à l'intérieur de la boîte
-                    scrollZone.scrollTo(centreX, centreY);
+                    // On lance le déplacement !
+                    monPanzoom.pan(moveX, moveY);
                 }
-            }, 150); 
+            }, 100); 
         });
     </script>
 </body>
