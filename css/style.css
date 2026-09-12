@@ -1,17 +1,22 @@
 /* =========================================
-   1. RÉGLAGES DE BASE
+   1. RÉGLAGES DE BASE (MODE APPLICATION)
    ========================================= */
-body {
+html, body {
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* NOUVEAU : On ajoute un espace en haut pour que la carte ne se cache pas sous le titre */
+    height: 100%;
+    overflow: hidden; /* LE SECRET : On bloque l'écran global */
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f7ec; 
-    color: #333;
+    background-color: #f0f7ec;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 /* =========================================
-   2. EN-TÊTE (TITRE CLOUÉ À L'ÉCRAN)
+   2. EN-TÊTE (TITRE TOTALEMENT VERROUILLÉ)
    ========================================= */
 header {
     background-color: #4CAF50; 
@@ -19,15 +24,10 @@ header {
     text-align: center;
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    
-    /* MODIFIÉ : Ces 4 lignes fixent totalement le titre (haut/bas ET gauche/droite) */
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    width: 100%;
-    box-sizing: border-box; /* Empêche le titre de déborder de l'écran */
+    flex-shrink: 0; /* Empêche le titre de s'écraser */
     z-index: 1000; 
 }
+
 header h1 {
     margin: 0;
     font-size: 1.4rem;
@@ -40,43 +40,27 @@ header p {
 }
 
 /* =========================================
-   3. CARTE INTERACTIVE (PAGE D'ACCUEIL)
+   3. CARTE INTERACTIVE (ZONE QUI DÉFILE)
    ========================================= */
+main {
+    flex-grow: 1; /* Prend toute la place restante sous le titre */
+    overflow: auto; /* C'est cette zone qui glisse sous le doigt ! */
+    -webkit-overflow-scrolling: touch; /* Glissement ultra-fluide sur iPhone */
+    position: relative;
+}
+
 .map-container {
-    position: relative; /* Indispensable pour superposer le SVG */
-    width: 100%;
-    min-width: 750px; /* Taille modérée : on peut scroller sans que ce soit géant */
-    margin: 0 auto; /* Centre la carte */
-    display: block;
+    position: relative; 
+    width: max-content; 
+    min-width: 800px; /* Assez grand pour voir les détails */
+    margin: 0 auto; 
 }
 
 .map-container img {
     display: block;
     width: 100%;
     height: auto; 
-}
-
-/* --- Le calque SVG --- */
-.calque-interactif {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* --- Les zones tactiles (Cercles) --- */
-.zone-cliquable {
-    fill: rgba(255, 255, 255, 0); /* Totalement transparent au repos */
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent; /* Enlève le flash bleu sur Android */
-}
-
-/* Effet quand on touche une zone */
-.zone-cliquable:active, 
-.zone-cliquable:hover {
-    fill: rgba(255, 255, 255, 0.4); /* Voile blanc pour confirmer le clic */
-}
-
-/* =========================================
+}/* =========================================
    4. PAGES D'EXPLICATIONS (LES SOUS-PAGES)
    ========================================= */
 .page-contenu {
@@ -109,27 +93,29 @@ header p {
     margin-bottom: 10px;
 }
 
-/* --- Bouton "Retour à la carte" --- */
-.bouton-retour {
-    display: block;
+ton-retour {
+    position: fixed; /* Il "flotte" par-dessus l'écran */
+    bottom: 25px; /* Écart par rapport au bas de l'écran */
+    right: 25px; /* Écart par rapport à la droite */
+    width: 60px; /* Largeur du pouce */
+    height: 60px; /* Hauteur du pouce */
     background-color: #4CAF50;
     color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none; /* Enlève le soulignement */
-    font-weight: bold;
-    font-size: 1.1rem;
-    border-radius: 30px; /* Bouton ovale */
-    margin-top: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
+    border-radius: 50%; /* Fait un cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px; /* Taille de l'icône */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Belle ombre pour le faire ressortir */
+    text-decoration: none;
+    z-index: 1000;
 }
 
-/* Couleur du bouton au moment du clic */
+/* Effet quand on appuie dessus */
 .bouton-retour:active {
     background-color: #388E3C;
+    transform: scale(0.9); /* Le bouton se compresse légèrement */
 }
-
 /* --- Style des photos dans les pages --- */
 .photo-page {
     width: 100%; /* La photo prend toute la largeur disponible */
