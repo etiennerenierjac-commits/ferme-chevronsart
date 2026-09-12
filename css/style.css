@@ -126,7 +126,7 @@ body.page-carte main {
 /* --- Rend les cadres légèrement transparents --- */
 .texte-explicatif.translucide {
     /* 255, 255, 255 c'est le blanc. 0.85 c'est l'opacité (85% visible, 15% transparent) */
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color: rgba(255, 255, 255, 0.70); 
     /* Petit bonus très moderne : floute légèrement l'image qui passe derrière le texte */
     backdrop-filter: blur(4px); 
     -webkit-backdrop-filter: blur(4px);
