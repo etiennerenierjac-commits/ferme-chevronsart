@@ -1,22 +1,24 @@
 /* =========================================
-   1. RÉGLAGES DE BASE (MODE APPLICATION)
+   1. RÉGLAGES DE BASE
    ========================================= */
-html, body {
+body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* LE SECRET : On bloque l'écran global */
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f7ec;
+    color: #333;
 }
 
-body {
+/* MODE APPLICATION : S'applique UNIQUEMENT à la page de la carte */
+body.page-carte {
+    height: 100vh; /* Prend 100% de la hauteur de l'écran */
+    overflow: hidden; /* Bloque le défilement naturel */
     display: flex;
     flex-direction: column;
 }
 
 /* =========================================
-   2. EN-TÊTE (TITRE TOTALEMENT VERROUILLÉ)
+   2. EN-TÊTE (TITRE)
    ========================================= */
 header {
     background-color: #4CAF50; 
@@ -24,20 +26,14 @@ header {
     text-align: center;
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    flex-shrink: 0; /* Empêche le titre de s'écraser */
     z-index: 1000; 
+    flex-shrink: 0; 
+    
+    /* Garde le titre visible en haut quand on lit les pages d'explications */
+    position: sticky;
+    top: 0;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.4rem;
-}
-
-header p {
-    margin: 5px 0 0 0;
-    font-size: 0.9rem;
-    font-style: italic;
-}
 /* =========================================
    3. CARTE INTERACTIVE (ZONE PANZOOM)
    ========================================= */
@@ -93,7 +89,7 @@ main {
     padding: 15px;
     max-width: 600px; /* Parfait pour mobile */
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding-bottom: 100px;
 }
 
 .texte-explicatif {
