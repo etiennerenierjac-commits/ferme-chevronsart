@@ -3,35 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fromagerie - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
+    <title>La Fromagerie - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Fromagerie</h1>
+        <h1>La Fromagerie</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : La transformation
+             Image de fond : fromageriefond1.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/fromageriefond1.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>De l'étable à l'affinage 🧀</h2>
+                    <p>Notre fromagerie est le lieu où s'exprime tout le savoir-faire de la ferme. Nous y élaborons nos <strong>fromages de chèvre et de vache</strong>[cite: 1].</p>
+                    <p>Pour notre élevage bovin, environ 20 % de nos 120 000 litres de lait annuels sont valorisés et transformés sur place[cite: 1]. Le travail rigoureux de notre éleveuse-fromagère permet de produire <strong>125 kg de fromages par semaine</strong>[cite: 1] !</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : Nos techniques artisanes
+             Image de fond : fromageriefond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/fromageriefond2.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Un savoir-faire au lait cru 🤲</h2>
+                    <p>Pour garantir des produits vivants et riches en goût, nous travaillons exclusivement au <strong>lait cru</strong>. Voici les grandes étapes de notre fabrication artisanale :</p>
+                    <ul>
+                        <li><strong>Le caillage :</strong> Ajout de présure et de ferments naturels pour faire coaguler le lait.</li>
+                        <li><strong>Le moulage :</strong> Fait à la main, souvent à la louche, pour respecter la texture du caillé (idéal pour les pâtes molles).</li>
+                        <li><strong>L'égouttage et le salage :</strong> Le sérum s'évacue naturellement, et le salage (au sel sec ou en saumure) forme la croûte.</li>
+                        <li><strong>L'affinage :</strong> Nos fromages reposent en cave sur des planches en bois, où ils sont retournés et brossés régulièrement.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 3 : Nos fromages
+             Image de fond : fromageriefond3.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/fromageriefond3.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Nos différents types de fromages 🏷️</h2>
+                    <p>En maîtrisant différentes techniques, nous proposons une gamme variée qui évolue au fil des saisons :</p>
+                    <ul>
+                        <li><strong>Les lactiques (Chèvres frais et affinés) :</strong> Une coagulation lente pour des fromages fondants, cendrés ou nature.</li>
+                        <li><strong>Les pâtes molles à croûte fleurie :</strong> Un cœur crémeux sous une belle croûte blanche (type Camembert ou Brie).</li>
+                        <li><strong>Les pâtes pressées (Tommes) :</strong> Le caillé est pressé pour évacuer l'humidité, permettant un affinage long de plusieurs mois pour développer des arômes intenses.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         
-        <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>
