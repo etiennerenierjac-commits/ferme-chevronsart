@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive - Ferme de Chevronsart</title>
+    <!-- On relie la page à notre fichier de style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- L'en-tête de la page -->
+    <header>
+        <h1>Ferme de Chevronsart</h1>
+        <p>Touchez un bâtiment ou un animal pour explorer</p>
+    </header>
+
+    <!-- La zone principale qui contient la carte -->
+    <main>
+        <div class="map-container">
+            <!-- Ton image de fond -->
+            <img src="images/Illustration ferme 1.jpg" alt="Plan de la ferme" id="carte-ferme">
+            
+            <!-- Le calque invisible interactif (SVG) -->
+            <svg width="100%" height="100%" class="calque-interactif">
+                
+                <!-- 1. Verger haute tige -->
+    <a href="pages/verger.html"><circle cx="81%" cy="38%" r="9%" class="zone-cliquable" /></a>
+    <!-- 2. Elevage porcin -->
+    <a href="pages/porcs.html"><circle cx="31%" cy="70%" r="3.5%" class="zone-cliquable" /></a>
+    <!-- 3. Elevage bovin (vaches sur la colline) -->
+    <a href="pages/bovins.html"><circle cx="31%" cy="43%" r="3.5%" class="zone-cliquable" /></a>
+    <!-- 4. Elevage caprin (chèvres) -->
+    <a href="pages/caprins.html"><circle cx="24%" cy="55%" r="3%" class="zone-cliquable" /></a>
+    <!-- 5. Poulailler mobile -->
+    <a href="pages/poulailler.html"><circle cx="18%" cy="57%" r="3%" class="zone-cliquable" /></a>
+    <!-- 6. Culture céréalière (champ jaune) -->
+    <a href="pages/cereales.html"><circle cx="56%" cy="45%" r="3.5%" class="zone-cliquable" /></a>
+    <!-- 7. Mare aménagée -->
+    <a href="pages/mare.html"><circle cx="13%" cy="65%" r="3.5%" class="zone-cliquable" /></a>
+    <!-- 8. Logement insolite (cabane en haut à gauche) -->
+    <a href="pages/logement.html"><circle cx="23%" cy="39%" r="3.5%" class="zone-cliquable" /></a>
+    <!-- 9. Barbecue des coopérateurs -->
+    <a href="pages/barbecue.html"><circle cx="42%" cy="44%" r="3%" class="zone-cliquable" /></a>
+    
+    <!-- Bâtiments centraux (Laiterie, Fromagerie, Boucherie, Boulangerie, Magasin...) -->
+    <!-- Note : Les liens sont à ajuster selon le bâtiment exact -->
+    <a href="pages/boulangerie.html"><circle cx="44%" cy="62%" r="2.5%" class="zone-cliquable" /></a>
+    <a href="pages/laiterie.html"><circle id="centre-carte" cx="51%" cy="53%" r="3%" class="zone-cliquable" /></a>
+    <a href="pages/fromagerie.html"><circle cx="58%" cy="50%" r="2.5%" class="zone-cliquable" /></a>
+    <a href="pages/boucherie.html"><circle cx="61%" cy="56%" r="2.5%" class="zone-cliquable" /></a>
+    <a href="pages/magasin.html"><circle cx="54%" cy="61%" r="2.5%" class="zone-cliquable" /></a>
+    
+    <!-- Espace commun / Place des fêtes (Plaine de jeux) -->
+    <a href="pages/espace-commun.html"><circle cx="63%" cy="64%" r="3%" class="zone-cliquable" /></a>
+
+</svg>
+        </div>
+    </main>
+
+<!-- Script pour centrer la carte au chargement -->
+    <script>
+        window.onload = function() {
+            const centre = document.getElementById('centre-carte');
+            // Centre l'écran sur le bâtiment principal, horizontalement et verticalement
+            centre.scrollIntoView({ block: 'center', inline: 'center' });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* =========================================
+   1. RÉGLAGES DE BASE
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f7ec; /* Vert très clair et chaleureux */
+    color: #333;
+}
+
+/* =========================================
+   2. EN-TÊTE (TITRE FIXE)
+   ========================================= */
+header {
+    background-color: #4CAF50; /* Vert agricole */
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    /* Ces 3 lignes fixent le titre en haut de l'écran */
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* =========================================
+   3. CARTE INTERACTIVE (PAGE D'ACCUEIL)
+   ========================================= */
+.map-container {
+    position: relative; /* Indispensable pour superposer le SVG */
+    width: 100%;
+    min-width: 750px; /* Taille modérée : on peut scroller sans que ce soit géant */
+    margin: 0 auto; /* Centre la carte */
+    display: block;
+}
+
+.map-container img {
+    display: block;
+    width: 100%;
+    height: auto; 
+}
+
+/* --- Le calque SVG --- */
+.calque-interactif {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- Les zones tactiles (Cercles) --- */
+.zone-cliquable {
+    fill: rgba(255, 255, 255, 0); /* Totalement transparent au repos */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Enlève le flash bleu sur Android */
+}
+
+/* Effet quand on touche une zone */
+.zone-cliquable:active, 
+.zone-cliquable:hover {
+    fill: rgba(255, 255, 255, 0.4); /* Voile blanc pour confirmer le clic */
+}
+
+/* =========================================
+   4. PAGES D'EXPLICATIONS (LES SOUS-PAGES)
+   ========================================= */
+.page-contenu {
+    padding: 15px;
+    max-width: 600px; /* Parfait pour mobile */
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.texte-explicatif {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px; /* Bords arrondis */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Petite ombre */
+    line-height: 1.6; /* Améliore la lisibilité */
+    color: #444;
+}
+
+.texte-explicatif h2 {
+    color: #8D6E63; /* Couleur marron/terre */
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.texte-explicatif ul {
+    padding-left: 20px;
+}
+
+.texte-explicatif li {
+    margin-bottom: 10px;
+}
+
+/* --- Bouton "Retour à la carte" --- */
+.bouton-retour {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none; /* Enlève le soulignement */
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 30px; /* Bouton ovale */
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+/* Couleur du bouton au moment du clic */
+.bouton-retour:active {
+    background-color: #388E3C;
+}
+
+/* --- Style des photos dans les pages --- */
+.photo-page {
+    width: 100%; /* La photo prend toute la largeur disponible */
+    height: auto;
+    border-radius: 12px; /* Même arrondi que le bloc de texte */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
