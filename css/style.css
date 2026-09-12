@@ -1,22 +1,28 @@
 /* =========================================
    1. RÉGLAGES DE BASE
    ========================================= */
+html {
+    /* Force le smartphone à débloquer le défilement sur les pages de texte */
+    overflow: visible !important;
+    height: auto !important;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f7ec;
     color: #333;
+    overflow-y: auto; /* Autorise le défilement de haut en bas */
 }
 
 /* MODE APPLICATION : S'applique UNIQUEMENT à la page de la carte */
 body.page-carte {
-    height: 100vh; /* Prend 100% de la hauteur de l'écran */
-    overflow: hidden; /* Bloque le défilement naturel */
+    height: 100vh !important;
+    overflow: hidden !important; /* Bloque l'écran uniquement sur la carte */
     display: flex;
     flex-direction: column;
 }
-
 /* =========================================
    2. EN-TÊTE (TITRE)
    ========================================= */
@@ -115,29 +121,38 @@ main {
     margin-bottom: 10px;
 }
 
-ton-retour {
-    position: fixed; /* Il "flotte" par-dessus l'écran */
+/* --- LE NOUVEAU BOUTON DE RETOUR (GRAND ET CENTRÉ) --- */
+.bouton-retour {
+    position: fixed;
     bottom: 25px; /* Écart par rapport au bas de l'écran */
-    right: 25px; /* Écart par rapport à la droite */
-    width: 60px; /* Largeur du pouce */
-    height: 60px; /* Hauteur du pouce */
+    left: 50%;
+    transform: translateX(-50%); /* Astuce magique pour le centrer parfaitement */
+    
     background-color: #4CAF50;
     color: white;
-    border-radius: 50%; /* Fait un cercle parfait */
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 30px; /* Bords bien arrondis */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Belle ombre pour le démarquer */
+    z-index: 1000;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px; /* Taille de l'icône */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Belle ombre pour le faire ressortir */
-    text-decoration: none;
-    z-index: 1000;
+    gap: 10px; /* Espace entre les émoticones et le texte */
+    width: 80%; /* Prend 80% de la largeur de l'écran */
+    max-width: 350px; /* Évite qu'il soit trop géant sur un grand écran */
 }
 
 /* Effet quand on appuie dessus */
 .bouton-retour:active {
     background-color: #388E3C;
-    transform: scale(0.9); /* Le bouton se compresse légèrement */
+    transform: translateX(-50%) scale(0.95); /* Le bouton s'enfonce légèrement */
 }
+
 /* --- Style des photos dans les pages --- */
 .photo-page {
     width: 100%; /* La photo prend toute la largeur disponible */
