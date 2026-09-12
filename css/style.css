@@ -100,13 +100,37 @@ body.page-carte main {
 /* =========================================
    4. PAGES D'EXPLICATIONS (LES SOUS-PAGES)
    ========================================= */
+
+/* --- Conteneur global des pages --- */
 .page-contenu {
-    padding: 15px;
-    max-width: 600px; /* Parfait pour mobile */
-    margin: 0 auto;
+    padding: 0; /* On enlève le padding pour que les photos touchent les bords */
+    margin: 0;
     padding-bottom: 100px;
 }
 
+/* --- Les nouvelles grandes sections avec photo de fond (Parallaxe) --- */
+.section-parallax {
+    background-attachment: fixed; /* LA MAGIE EST ICI : l'image reste fixe pendant que le reste défile */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* L'image s'étire pour couvrir toute la zone */
+    padding: 60px 15px; /* Espace en haut et en bas des cadres de texte */
+}
+
+/* --- Pour centrer les cadres au milieu de l'écran --- */
+.conteneur-texte {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Rend les cadres légèrement transparents --- */
+.texte-explicatif.translucide {
+    /* 255, 255, 255 c'est le blanc. 0.85 c'est l'opacité (85% visible, 15% transparent) */
+    background-color: rgba(255, 255, 255, 0.85); 
+    /* Petit bonus très moderne : floute légèrement l'image qui passe derrière le texte */
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(4px);
+}
 .texte-explicatif {
     background-color: white;
     padding: 20px;
