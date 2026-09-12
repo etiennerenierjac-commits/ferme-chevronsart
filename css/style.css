@@ -4,27 +4,30 @@
 body {
     margin: 0;
     padding: 0;
+    padding-top: 80px; /* NOUVEAU : On ajoute un espace en haut pour que la carte ne se cache pas sous le titre */
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f7ec; /* Vert très clair et chaleureux */
+    background-color: #f0f7ec; 
     color: #333;
 }
 
 /* =========================================
-   2. EN-TÊTE (TITRE FIXE)
+   2. EN-TÊTE (TITRE CLOUÉ À L'ÉCRAN)
    ========================================= */
 header {
-    background-color: #4CAF50; /* Vert agricole */
+    background-color: #4CAF50; 
     color: white;
     text-align: center;
     padding: 15px 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     
-    /* Ces 3 lignes fixent le titre en haut de l'écran */
-    position: sticky; 
+    /* MODIFIÉ : Ces 4 lignes fixent totalement le titre (haut/bas ET gauche/droite) */
+    position: fixed; 
     top: 0; 
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Empêche le titre de déborder de l'écran */
     z-index: 1000; 
 }
-
 header h1 {
     margin: 0;
     font-size: 1.4rem;
