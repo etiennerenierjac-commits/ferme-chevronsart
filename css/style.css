@@ -76,15 +76,24 @@ body.page-carte main {
 
 /* --- Les zones tactiles (Cercles) --- */
 .zone-cliquable {
-    fill: rgba(255, 255, 255, 0); /* Les rend à nouveau transparents ! */
+    /* Le 0.2 à la fin donne une opacité de 20% (légèrement blanc) au lieu de 0 */
+    fill: rgba(255, 255, 255, 0.2); 
+    
+    /* On ajoute un petit contour pointillé blanc très élégant */
+    stroke: rgba(255, 255, 255, 0.7);
+    stroke-width: 2px;
+    stroke-dasharray: 5; /* Crée l'effet de pointillés */
+    
     cursor: pointer;
     -webkit-tap-highlight-color: transparent; 
+    transition: all 0.2s ease-in-out; /* Rend le changement de couleur fluide */
 }
 
-/* Effet quand on touche une zone */
+/* Effet quand on touche une zone avec le doigt */
 .zone-cliquable:active, 
 .zone-cliquable:hover {
-    fill: rgba(255, 255, 255, 0.4); 
+    fill: rgba(255, 255, 255, 0.5); /* Devient plus blanc pour confirmer le clic */
+    stroke: rgba(255, 255, 255, 1); /* Le contour devient 100% blanc */
 }
 
 
