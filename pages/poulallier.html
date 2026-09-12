@@ -3,35 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boulangerie Paysanne - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
+    <title>Le Poulailler Mobile - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Boulangerie Paysanne</h1>
+        <h1>Le Poulailler Mobile</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : L'élevage en plein air 
+             Image de fond : poulaillerfond1.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/poulaillerfond1.jpg');">
+            <div class="conteneur-texte">
+                
+                <div class="texte-explicatif translucide">
+                    <h2>Des poules heureuses en plein air 🐔</h2>
+                    <p>Notre ferme accueille un élevage à taille humaine de <strong>350 poules pondeuses</strong>[cite: 1].</p>
+                    <p>Pour garantir leur bien-être et respecter la nature de nos sols, nous avons fait le choix de <strong>poulaillers mobiles</strong>[cite: 1]. Nos poules sont élevées en plein air, ce qui leur permet de gratter le sol, de trouver des insectes et de profiter de l'herbe fraîche en permanence[cite: 1]. Régulièrement, le poulailler est déplacé sur une nouvelle parcelle !</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : La production d'œufs
+             Image de fond : poulaillerfond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/poulaillerfond2.jpg');">
+            <div class="conteneur-texte">
+                
+                <div class="texte-explicatif translucide">
+                    <h2>Des œufs ultra-frais 🥚</h2>
+                    <p>Grâce à cet environnement sain et naturel, nos poules produisent environ <strong>1 600 œufs par semaine</strong>[cite: 1].</p>
+                    <p>Ces œufs d'une grande qualité gustative et nutritionnelle sont directement distribués à nos mangeurs et disponibles dans notre magasin à la ferme[cite: 1]. Un véritable circuit court !</p>
+                </div>
+
+            </div>
+        </section>
         
         <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>
