@@ -59,22 +59,22 @@
     </main>
 
 <!-- Script pour centrer la carte au chargement -->
-   <script>
+    <script>
         window.addEventListener('load', function() {
-            // On attend 150 millisecondes que la grande image soit bien affichée sur le téléphone
             setTimeout(function() {
                 const centre = document.getElementById('centre-carte');
-                if (centre) {
-                    // Récupère la position du bâtiment central
+                const scrollZone = document.querySelector('main'); // La nouvelle boîte qui glisse
+                
+                if (centre && scrollZone) {
                     const position = centre.getBoundingClientRect();
+                    const zonePosition = scrollZone.getBoundingClientRect();
                     
-                    // Calcule le milieu exact de l'écran du visiteur
-                    const centreX = position.left + window.scrollX - (window.innerWidth / 2);
-                    // On ajoute 40 pixels pour compenser le fait que le titre cache un peu le haut
-                    const centreY = position.top + window.scrollY - (window.innerHeight / 2) + 40; 
+                    // Calcul mathématique précis du centre
+                    const centreX = scrollZone.scrollLeft + position.left - zonePosition.left - (scrollZone.clientWidth / 2);
+                    const centreY = scrollZone.scrollTop + position.top - zonePosition.top - (scrollZone.clientHeight / 2);
                     
-                    // Fait un saut instantané vers ce point
-                    window.scrollTo(centreX, centreY);
+                    // Effectue le déplacement à l'intérieur de la boîte
+                    scrollZone.scrollTo(centreX, centreY);
                 }
             }, 150); 
         });
