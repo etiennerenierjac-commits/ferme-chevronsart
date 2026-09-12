@@ -59,12 +59,25 @@
     </main>
 
 <!-- Script pour centrer la carte au chargement -->
-    <script>
-        window.onload = function() {
-            const centre = document.getElementById('centre-carte');
-            // Centre l'écran sur le bâtiment principal, horizontalement et verticalement
-            centre.scrollIntoView({ block: 'center', inline: 'center' });
-        };
+   <script>
+        window.addEventListener('load', function() {
+            // On attend 150 millisecondes que la grande image soit bien affichée sur le téléphone
+            setTimeout(function() {
+                const centre = document.getElementById('centre-carte');
+                if (centre) {
+                    // Récupère la position du bâtiment central
+                    const position = centre.getBoundingClientRect();
+                    
+                    // Calcule le milieu exact de l'écran du visiteur
+                    const centreX = position.left + window.scrollX - (window.innerWidth / 2);
+                    // On ajoute 40 pixels pour compenser le fait que le titre cache un peu le haut
+                    const centreY = position.top + window.scrollY - (window.innerHeight / 2) + 40; 
+                    
+                    // Fait un saut instantané vers ce point
+                    window.scrollTo(centreX, centreY);
+                }
+            }, 150); 
+        });
     </script>
 </body>
 </html>
