@@ -38,7 +38,52 @@ header p {
     font-size: 0.9rem;
     font-style: italic;
 }
+/* =========================================
+   3. CARTE INTERACTIVE (ZONE PANZOOM)
+   ========================================= */
+main {
+    flex-grow: 1; 
+    overflow: hidden; 
+    position: relative;
+    touch-action: none; 
+}
 
+.map-container {
+    position: relative; /* INDISPENSABLE pour que le calque SVG reste par-dessus l'image */
+    width: 1200px; 
+    margin: 0 auto; 
+    user-select: none; 
+    -webkit-user-drag: none;
+}
+
+.map-container img {
+    display: block;
+    width: 100%;
+    height: auto; 
+    pointer-events: none; 
+}
+
+/* --- Le calque SVG (qui superpose nos zones) --- */
+.calque-interactif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Les zones tactiles (Cercles) --- */
+.zone-cliquable {
+    fill: rgba(255, 255, 255, 0); /* Les rend à nouveau transparents ! */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* Effet quand on touche une zone */
+.zone-cliquable:active, 
+.zone-cliquable:hover {
+    fill: rgba(255, 255, 255, 0.4); 
+}
 
 
 /* =========================================
