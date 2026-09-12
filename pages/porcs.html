@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boulangerie Paysanne - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
+    <title>L'Élevage Porcin - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Boulangerie Paysanne</h1>
+        <h1>L'Élevage Porcin</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : L'élevage
+             Image de fond : porcsfond1.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/porcsfond1.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Un élevage respectueux et rustique 🐖</h2>
+                    <p>Au sein de la Ferme de Chevronsart, nous avons fait le choix d'un élevage porcin à taille humaine, centré sur le bien-être animal et le respect de notre environnement. Notre cheptel se compose de <strong>6 truies</strong>[cite: 1].</p>
+                    <p>Pour garantir la robustesse de nos animaux, nous avons sélectionné des <strong>races rustiques, parfaitement adaptées à notre territoire</strong>[cite: 1]. Ces cochons grandissent à leur rythme, profitent d'une alimentation saine et expriment leurs comportements naturels, ce qui contribue à la qualité exceptionnelle de leur viande.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : La production
+             Image de fond : porcsfond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/porcsfond2.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Une viande de haute qualité 🥓</h2>
+                    <p>Ce mode d'élevage patient et naturel nous permet de produire environ <strong>100 porcs par an</strong>[cite: 1].</p>
+                    <p>Cela représente un volume annuel d'environ <strong>9 000 kg de viande (poids carcasse)</strong>[cite: 1]. Contrairement à l'élevage industriel, notre viande présente un beau persillage, une meilleure tenue à la cuisson et des qualités gustatives authentiques qui rappellent le vrai goût du porc d'antan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 3 : La valorisation
+             Image de fond : porcsfond3.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/porcsfond3.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>De la ferme à l'assiette 🤝</h2>
+                    <p>La valorisation de notre production porcine reflète nos valeurs de coopération et de circuit court :</p>
+                    <ul>
+                        <li><strong>Transformation à la ferme (50 %) :</strong> La moitié de notre viande est transformée directement sur place dans notre propre atelier de boucherie, pour vous proposer des découpes fraîches et de la charcuterie artisanale[cite: 1].</li>
+                        <li><strong>Coopérative PQA (50 %) :</strong> L'autre moitié est vendue via la filière <strong>Porc Qualité Ardenne (PQA)</strong>[cite: 1]. Cette coopérative rassemble des éleveurs passionnés et garantit un cahier des charges strict sur le bien-être animal et une rémunération juste pour les producteurs.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         
-        <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>

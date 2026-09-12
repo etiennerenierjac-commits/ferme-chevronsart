@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laiterie - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
+    <title>La Laiterie - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Laiterie</h1>
+        <h1>La Laiterie</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : L'élevage au pâturage
+             Image de fond : laiteriefond1.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/laiteriefond1.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Des vaches heureuses au pré 🐄</h2>
+                    <p>La base d'un bon lait, c'est avant tout une vache en bonne santé qui se nourrit naturellement. Notre ferme est certifiée en <strong>agriculture biologique depuis 2017</strong> et dispose de 35 hectares de belles prairies[cite: 1].</p>
+                    <p>Notre troupeau se compose de <strong>30 vaches mixtes</strong> (produisant à la fois du lait et de la viande)[cite: 1]. Nous avons sélectionné des <strong>races rustiques, parfaitement adaptées à notre territoire</strong> et à son climat[cite: 1]. Elles passent un maximum de temps à l'extérieur pour pâturer une herbe riche et diversifiée, ce qui garantit le respect de leur bien-être et le maintien de la biodiversité de nos sols.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : La production laitière
+             Image de fond : laiteriefond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/laiteriefond2.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Un lait riche et vivant 🥛</h2>
+                    <p>En privilégiant des races rustiques et une alimentation basée sur l'herbe et le foin de nos terres, nous ne cherchons pas à battre des records de rendements industriels, mais à obtenir une qualité exceptionnelle.</p>
+                    <p>Notre troupeau produit ainsi <strong>120 000 litres de lait par an</strong>[cite: 1]. Ce lait est naturellement riche en nutriments, en protéines et en matières grasses. C'est cette matière première noble, vivante et goûteuse qui donne toute leur typicité à nos futurs produits laitiers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 3 : Coopération et transformation
+             Image de fond : laiteriefond3.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/laiteriefond3.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>De la traite à la coopérative 🤝</h2>
+                    <p>L'économie sociale et la coopération sont au cœur de la philosophie de Paysans Demain[cite: 1]. C'est pourquoi nous avons opté pour un modèle de valorisation solidaire et local pour notre lait :</p>
+                    <ul>
+                        <li><strong>Transformation à la ferme (20 %) :</strong> Une partie de notre lait (environ un cinquième) est conservée à la ferme pour être transformée avec passion dans notre fromagerie artisanale[cite: 1].</li>
+                        <li><strong>Coopérative Arla (80 %) :</strong> La majorité de notre production est collectée par <strong>la laiterie coopérative Arla</strong>[cite: 1]. Travailler avec une coopérative nous assure une relation équitable, une transparence totale et une juste rémunération de notre travail d'éleveurs.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         
-        <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>
