@@ -97,6 +97,24 @@ body.page-carte main {
     50%  { stroke: rgba(255, 255, 255, 0.6); fill: rgba(255, 255, 255, 0.1); }
     100% { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.0); }
 }
+
+/* --- Variante pour les cercles sur fond blanc (Place des Fêtes) --- */
+.zone-foncee {
+    stroke: rgba(0, 0, 0, 0.4);
+    animation: respiration-foncee 2.5s infinite;
+}
+
+.zone-foncee:hover, .zone-foncee:active {
+    fill: rgba(0, 0, 0, 0.15); /* Voile sombre au survol */
+    stroke: rgba(0, 0, 0, 0.8);
+}
+
+/* L'animation de pulsation en version sombre */
+@keyframes respiration-foncee {
+    0%   { stroke: rgba(0, 0, 0, 0.1); fill: rgba(0, 0, 0, 0.0); }
+    50%  { stroke: rgba(0, 0, 0, 0.5); fill: rgba(0, 0, 0, 0.05); }
+    100% { stroke: rgba(0, 0, 0, 0.1); fill: rgba(0, 0, 0, 0.0); }
+}
 /* Effet quand on touche une zone avec le doigt */
 .zone-cliquable:active, 
 .zone-cliquable:hover {
