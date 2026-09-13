@@ -116,26 +116,32 @@
                 }
             }, 50); 
 
-            // ==========================================
-            // NOUVEAU : Effet "On rentre dedans" au clic
+           // ==========================================
+            // NOUVEAU : Effet "On rentre dedans" ULTRA FLUIDE (CSS)
             // ==========================================
             const liens = document.querySelectorAll('.calque-interactif a');
             liens.forEach(lien => {
                 lien.addEventListener('click', function(e) {
-                    e.preventDefault(); // 1. On bloque le changement de page immédiat
+                    e.preventDefault(); 
                     const url = this.getAttribute('href');
 
-                    // 2. On zoome très fort là où l'utilisateur a posé son doigt/souris
-                    monPanzoom.zoomToPoint(4, { clientX: e.clientX, clientY: e.clientY });
+                    // 1. On cible la zone de la carte
+                    const mainZone = document.querySelector('main');
+                    
+                    // 2. On définit le point de départ du zoom exactement sous le doigt
+                    mainZone.style.transformOrigin = e.clientX + "px " + e.clientY + "px";
+                    
+                    // 3. On active l'accélération matérielle CSS (super fluide)
+                    mainZone.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
+                    
+                    // 4. On zoome fort (scale) et on fond au noir (opacity)
+                    mainZone.style.transform = "scale(3.5)";
+                    mainZone.style.opacity = "0";
 
-                    // 3. On ajoute un bel effet de fondu pour faire disparaître la carte
-                    document.body.style.transition = "opacity 0.6s ease";
-                    document.body.style.opacity = "0";
-
-                    // 4. On lance la nouvelle page après 600 millisecondes (le temps de l'animation)
+                    // 5. On charge la page une fois l'animation terminée
                     setTimeout(() => {
                         window.location.href = url;
-                    }, 600);
+                    }, 500);
                 });
             });
         }
