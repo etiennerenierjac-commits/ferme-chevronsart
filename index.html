@@ -24,67 +24,67 @@
             <svg class="calque-interactif" viewBox="0 0 1200 850" preserveAspectRatio="xMidYMid meet">
                 
                 <!-- A: Barbecue -->
-                <a href="pages/barbecue.html"><circle cx="280" cy="350" r="35" class="zone-cliquable" /></a>
+                <a href="pages/barbecue.html"><circle cx="280" cy="340" r="30" class="zone-cliquable" /></a>
                 
                 <!-- B: Poulailler -->
-                <a href="pages/poulailler.html"><circle cx="210" cy="420" r="35" class="zone-cliquable" /></a>
+                <a href="pages/poulailler.html"><circle cx="200" cy="400" r="35" class="zone-cliquable" /></a>
                 
                 <!-- C: Caprins -->
-                <a href="pages/caprins.html"><circle cx="230" cy="510" r="35" class="zone-cliquable" /></a>
+                <a href="pages/caprins.html"><circle cx="200" cy="480" r="35" class="zone-cliquable" /></a>
                 
                 <!-- D: Marre -->
-                <a href="pages/marre.html"><circle cx="170" cy="590" r="45" class="zone-cliquable" /></a>
+                <a href="pages/marre.html"><circle cx="150" cy="560" r="35" class="zone-cliquable" /></a>
                 
                 <!-- E: Bovins -->
-                <a href="pages/bovins.html"><circle cx="430" cy="390" r="40" class="zone-cliquable" /></a>
+                <a href="pages/bovins.html"><circle cx="435" cy="378" r="35" class="zone-cliquable" /></a>
                 
                 <!-- F: Logement -->
-                <a href="pages/logement.html"><circle cx="400" cy="510" r="35" class="zone-cliquable" /></a>
+                <a href="pages/logement.html"><circle cx="400" cy="490" r="30" class="zone-cliquable" /></a>
                 
                 <!-- G: Porcs -->
-                <a href="pages/porcs.html"><circle cx="390" cy="620" r="45" class="zone-cliquable" /></a>
+                <a href="pages/porcs.html"><circle cx="390" cy="610" r="35" class="zone-cliquable" /></a>
                 
                 <!-- H: Boulangerie -->
-                <a href="pages/boulangerie.html"><circle cx="530" cy="550" r="35" class="zone-cliquable" /></a>
+                <a href="pages/boulangerie.html"><circle cx="530" cy="530" r="35" class="zone-cliquable" /></a>
                 
                 <!-- I: Cultures -->
-                <a href="pages/cultures.html"><circle cx="670" cy="380" r="30" class="zone-cliquable" /></a>
+                <a href="pages/cultures.html"><circle cx="680" cy="380" r="25" class="zone-cliquable" /></a>
                 
                 <!-- S: Chèvrerie (Insérée en ellipse sous I et au-dessus de J/K) -->
-                <a href="pages/chevrerie.html"><ellipse cx="655" cy="430" rx="35" ry="20" class="zone-cliquable" /></a>
+                <a href="pages/chevrerie.html"><ellipse cx="650" cy="420" rx="25" ry="10" class="zone-cliquable" /></a>
                 
                 <!-- J: Étable -->
-                <a href="pages/etable.html"><circle cx="610" cy="470" r="30" class="zone-cliquable" /></a>
+                <a href="pages/etable.html"><circle cx="610" cy="450" r="20" class="zone-cliquable" /></a>
                 
                 <!-- K: Laiterie -->
-                <a href="pages/laiterie.html"><circle cx="670" cy="470" r="30" class="zone-cliquable" id="centre-carte" /></a>
+                <a href="pages/laiterie.html"><circle cx="660" cy="450" r="20" class="zone-cliquable" id="centre-carte" /></a>
                 
                 <!-- L: Fromagerie -->
-                <a href="pages/fromagerie.html"><circle cx="720" cy="440" r="30" class="zone-cliquable" /></a>
+                <a href="pages/fromagerie.html"><circle cx="695" cy="430" r="20" class="zone-cliquable" /></a>
                 
                 <!-- M: Boucherie -->
-                <a href="pages/boucherie.html"><circle cx="620" cy="530" r="30" class="zone-cliquable" /></a>
+                <a href="pages/boucherie.html"><circle cx="625" cy="515" r="20" class="zone-cliquable" /></a>
                 
                 <!-- N: Magasin -->
-                <a href="pages/magasin.html"><circle cx="675" cy="530" r="30" class="zone-cliquable" /></a>
+                <a href="pages/magasin.html"><circle cx="665" cy="515" r="20" class="zone-cliquable" /></a>
                 
                 <!-- O: Place des Fêtes -->
-                <a href="pages/place-des-fetes.html"><circle cx="725" cy="500" r="30" class="zone-cliquable" /></a>
+                <a href="pages/place-des-fetes.html"><circle cx="700" cy="467" r="15" class="zone-cliquable zone-foncee" /></a>
                 
                 <!-- P: Communs -->
-                <a href="pages/communs.html"><circle cx="770" cy="500" r="30" class="zone-cliquable" /></a>
+                <a href="pages/communs.html"><circle cx="740" cy="480" r="20" class="zone-cliquable" /></a>
                 
                 <!-- Q: Pédagogique -->
-                <a href="pages/pedagogique.html"><circle cx="760" cy="565" r="35" class="zone-cliquable" /></a>
+                <a href="pages/pedagogique.html"><circle cx="750" cy="530" r="30" class="zone-cliquable" /></a>
                 
                 <!-- R: Verger (Très grand cercle) -->
-                <a href="pages/verger.html"><circle cx="1020" cy="420" r="140" class="zone-cliquable" /></a>
+                <a href="pages/verger.html"><circle cx="1020" cy="400" r="120" class="zone-cliquable" /></a>
                 
             </svg>
         </div>
     </main>
 
-    <!-- 1. On charge le moteur de zoom depuis internet -->
+   <!-- 1. On charge le moteur de zoom depuis internet -->
     <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
 
     <!-- 2. On l'applique sur notre carte -->
@@ -97,15 +97,15 @@
             const mainZone = document.querySelector('main');
             
             const monPanzoom = Panzoom(mapContainer, {
-                maxScale: 3,
+                maxScale: 4, /* J'ai augmenté un peu le zoom max pour un meilleur effet "plongeon" */
                 minScale: 0.3,
                 step: 0.1,
-                animate: true
+                animate: true /* Active les animations fluides */
             });
 
             mapContainer.parentElement.addEventListener('wheel', monPanzoom.zoomWithWheel);
 
-            // Centrage automatique
+            // Centrage automatique au lancement
             setTimeout(function() {
                 if (centre && mainZone) {
                     const rect = centre.getBoundingClientRect();
@@ -115,6 +115,29 @@
                     monPanzoom.pan(moveX, moveY);
                 }
             }, 50); 
+
+            // ==========================================
+            // NOUVEAU : Effet "On rentre dedans" au clic
+            // ==========================================
+            const liens = document.querySelectorAll('.calque-interactif a');
+            liens.forEach(lien => {
+                lien.addEventListener('click', function(e) {
+                    e.preventDefault(); // 1. On bloque le changement de page immédiat
+                    const url = this.getAttribute('href');
+
+                    // 2. On zoome très fort là où l'utilisateur a posé son doigt/souris
+                    monPanzoom.zoomToPoint(4, { clientX: e.clientX, clientY: e.clientY });
+
+                    // 3. On ajoute un bel effet de fondu pour faire disparaître la carte
+                    document.body.style.transition = "opacity 0.6s ease";
+                    document.body.style.opacity = "0";
+
+                    // 4. On lance la nouvelle page après 600 millisecondes (le temps de l'animation)
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                });
+            });
         }
 
         if (imageCarte.complete) {
