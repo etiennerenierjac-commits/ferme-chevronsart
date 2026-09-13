@@ -74,21 +74,29 @@ body.page-carte main {
     height: 100%;
 }
 
-/* --- Les zones tactiles (Cercles) --- */
+/* --- L'aspect de base de la zone (très discret) --- */
 .zone-cliquable {
-    /* Le 0.2 à la fin donne une opacité de 20% (légèrement blanc) au lieu de 0 */
-    fill: rgba(255, 255, 255, 0.2); 
-    
-    /* On ajoute un petit contour pointillé blanc très élégant */
-    stroke: rgba(255, 255, 255, 0.7);
-    stroke-width: 2px;
-    stroke-dasharray: 5; /* Crée l'effet de pointillés */
-    
+    fill: rgba(255, 255, 255, 0.1); /* Un voile blanc presque invisible */
+    stroke: rgba(255, 255, 255, 0.4); /* Une fine ligne blanche semi-transparente */
+    stroke-width: 2; /* Fini les pointillés ! */
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; 
-    transition: all 0.2s ease-in-out; /* Rend le changement de couleur fluide */
+    transition: all 0.3s ease;
+    animation: respiration 2.5s infinite; /* L'animation douce */
 }
 
+/* --- Quand l'utilisateur pose son doigt ou sa souris dessus --- */
+.zone-cliquable:hover, .zone-cliquable:active {
+    fill: rgba(255, 255, 255, 0.4); /* Le blanc devient un peu plus fort */
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-width: 3;
+}
+
+/* --- L'animation de pulsation --- */
+@keyframes respiration {
+    0%   { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.0); }
+    50%  { stroke: rgba(255, 255, 255, 0.6); fill: rgba(255, 255, 255, 0.1); }
+    100% { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.0); }
+}
 /* Effet quand on touche une zone avec le doigt */
 .zone-cliquable:active, 
 .zone-cliquable:hover {
