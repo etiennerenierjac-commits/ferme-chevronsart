@@ -98,57 +98,67 @@ body.page-carte main {
     stroke-width: 3;
 }
 
-/* --- L'aspect de base de la zone (totalement invisible au repos) --- */
+
+/* --- État de base (invisible) --- */
 .zone-cliquable {
-    fill: rgba(255, 255, 255, 0); 
-    stroke: rgba(255, 255, 255, 0); 
+    fill: rgba(255, 255, 255, 0);
+    stroke: rgba(255, 255, 255, 0);
     stroke-width: 2;
     cursor: pointer;
     transition: all 0.3s ease;
-    /* L'animation de base (la durée sera modifiée par le JS) */
-    animation: goutte-eau 6s infinite ease-in-out; 
 }
 
-/* --- Au survol, on force l'apparition --- */
+/* --- Au survol --- */
 .zone-cliquable:hover, .zone-cliquable:active {
-    fill: rgba(255, 255, 255, 0.5) !important;
-    stroke: rgba(255, 255, 255, 1) !important;
-    stroke-width: 4 !important;
+    fill: rgba(255, 255, 255, 0.3) !important;
+    stroke: rgba(255, 255, 255, 0.6) !important;
 }
 
-/* --- L'animation avec apparition brève --- */
-@keyframes goutte-eau {
-    0%, 85%, 100% { 
-        stroke: rgba(255, 255, 255, 0); 
-        stroke-width: 2; 
-        fill: rgba(255, 255, 255, 0); 
-    }
-    92% { 
-        stroke: rgba(255, 255, 255, 0.8); 
-        stroke-width: 4; 
-        fill: rgba(255, 255, 255, 0.3); 
-    }
+/* --- L'animation gérée par JavaScript --- */
+.scintillement-actif {
+    /* Une apparition douce qui dure 2 secondes */
+    animation: eclat-doux 2s ease-in-out;
 }
 
-/* --- Variante zone claire --- */
+@keyframes eclat-doux {
+    0% { stroke: rgba(255, 255, 255, 0); fill: rgba(255, 255, 255, 0); stroke-width: 2; }
+    /* Un blanc beaucoup plus doux (opacité 0.4) et moins épais */
+    50% { stroke: rgba(255, 255, 255, 0.4); fill: rgba(255, 255, 255, 0.15); stroke-width: 2.5; }
+    100% { stroke: rgba(255, 255, 255, 0); fill: rgba(255, 255, 255, 0); stroke-width: 2; }
+}
+
+/* ==========================================
+   Variante douce pour la Place des Fêtes
+   ========================================== */
+
+/* --- État de base (invisible) --- */
 .zone-foncee {
     fill: rgba(0, 0, 0, 0);
     stroke: rgba(0, 0, 0, 0);
-    animation: goutte-eau-foncee 6s infinite ease-in-out;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-@keyframes goutte-eau-foncee {
-    0%, 85%, 100% { 
-        stroke: rgba(0, 0, 0, 0); 
-        stroke-width: 2; 
-        fill: rgba(0, 0, 0, 0); 
-    }
-    92% { 
-        stroke: rgba(0, 0, 0, 0.6); 
-        stroke-width: 4; 
-        fill: rgba(0, 0, 0, 0.15); 
-    }
+/* --- Au survol --- */
+.zone-foncee:hover, .zone-foncee:active {
+    fill: rgba(0, 0, 0, 0.15) !important;
+    stroke: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* --- L'animation sombre gérée par JavaScript --- */
+.scintillement-foncee-actif {
+    animation: eclat-doux-fonce 2s ease-in-out;
+}
+
+@keyframes eclat-doux-fonce {
+    0% { stroke: rgba(0, 0, 0, 0); fill: rgba(0, 0, 0, 0); stroke-width: 2; }
+    50% { stroke: rgba(0, 0, 0, 0.25); fill: rgba(0, 0, 0, 0.08); stroke-width: 2.5; }
+    100% { stroke: rgba(0, 0, 0, 0); fill: rgba(0, 0, 0, 0); stroke-width: 2; }
+}
+
+
+
 }/* Effet quand on touche une zone avec le doigt */
 .zone-cliquable:active, 
 .zone-cliquable:hover {
