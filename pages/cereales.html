@@ -4,34 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boulangerie Paysanne - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Boulangerie Paysanne</h1>
+                <h1>La Boulangerie Artisanale</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : Concept & Céréales 
+             Image de fond : photo-boulangerie.jpg
+        =============================================== -->
+         <!-- J'ajoute "flex-direction: column;" au style au cas où ta section soit en flexbox pour que le texte reste bien en dessous du dessin -->
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond1.jpg'); flex-direction: column; justify-content: flex-start;">
+
+ <!-- === TON DESSIN EST PLACÉ ICI === -->
+            <!-- Il va prendre toute la largeur et le fond parallax sera derrière lui ! -->
+            <img src="../images/boulangerie.png" alt="Illustration de la boulangerie" class="image-entete">
+
+
+            <div class="conteneur-texte">
+                
+                <!-- Bloc 1 : Le concept -->
+                <div class="texte-explicatif translucide" style="margin-bottom: 20px;">
+                    <h2>Le concept : du grain au pain 🌾</h2>
+                    <img src="../images/boulangeriefond1.png" alt="Dessin du boulanger" class="image-flottante">
+                    <p>La boulangerie paysanne est une démarche globale où <strong>l’artisan maîtrise toute la chaîne de production</strong> : depuis les semis et la culture des céréales, en passant par la mouture de la farine, jusqu’à la cuisson du pain et sa vente directe.</p>
+                    <div class="nettoyeur"></div>
+                </div>
+
+                <!-- Bloc 2 : Les céréales -->
+                <div class="texte-explicatif translucide">
+                    <h2>1. Les Céréales 🌱</h2>
+                    <p>Nous cultivons du <strong>blé tendre (froment), du seigle et du petit épeautre</strong> sur 15 hectares. Dans une démarche d’agroécologie, nos cultures suivent une rotation sur 6 ans :</p>
+                    <ul>
+                        <li>2 années de blé</li>
+                        <li>1 année de seigle ou petit-épeautre</li>
+                        <li><strong>3 années de luzerne/dactyle :</strong> cela régénère le sol et nourrit nos vaches !</li>
+                    </ul>
+                    <p>Nos céréales sont re-semées chaque année. Elles s’adaptent au terrain pour former un "blé population". Le rendement (3,5 T/ha) est plus faible que dans l'industrie, mais garantit une <strong>haute résilience</strong>.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : La Meunerie
+             Image de fond : fond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond2.jpg');">
+            <div class="conteneur-texte">
+                
+                <!-- Bloc 3 : La meunerie -->
+                <div class="texte-explicatif translucide">
+                    <h2>2. La Meunerie ⚙️</h2>
+                    <p>Une fois récoltées, les céréales sont triées et brossées pour enlever les poussières. Le grain descend ensuite par gravité dans notre <strong>moulin de type Astrier</strong>.</p>
+                    <p>Deux meules de pierre broient doucement le grain. En sortie, un tamis rotatif sépare la farine du son (l'enveloppe du grain) :</p>
+                    <ul>
+                        <li><strong>Tamis fin :</strong> farine blanche (T45, T65).</li>
+                        <li><strong>Tamis large :</strong> farine complète (T80, T110...).</li>
+                    </ul>
+                    <p>Notre moulin extrait 15 kg de farine par heure. Cette farine est stockée une semaine avant d'être utilisée : on dit qu’elle <strong>« planche »</strong>.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 3 : La Boulangerie
+             Image de fond : fond3.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond3.jpg');">
+            <div class="conteneur-texte">
+                
+                <!-- Bloc 4 : La boulangerie -->
+                <div class="texte-explicatif translucide">
+                    <h2>3. La Boulangerie 🥖</h2>
+                    <p>C’est le cœur de notre activité ! Ici, le façonnage se fait manuellement, avec une <strong>fermentation lente au levain naturel</strong> et une cuisson au feu de bois.</p>
+                    <p><strong>Les avantages du levain :</strong></p>
+                    <ul>
+                        <li>Indépendance totale</li>
+                        <li>Goût authentique et incomparable</li>
+                        <li>Excellente conservation</li>
+                        <li>Meilleure digestibilité et apport nutritif</li>
+                    </ul>
+                    <p><strong>Notre grand four maçonné</strong> (marque Llopis, 3m de diamètre) possède une sole tournante. Sa chaleur constante permet de cuire jusqu'à 106 kg de pain en continu !</p>
+                    <p>👨‍🍳 <em>Avec 600 kg de pain, brioches et pâtes par semaine, cet atelier permet de nourrir <strong>plus de 300 coopérateurs</strong> et nos épiceries locales !</em></p>
+                </div>
+
+            </div>
+        </section>
         
         <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>
