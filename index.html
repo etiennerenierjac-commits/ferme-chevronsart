@@ -32,8 +32,8 @@
                 <!-- C: Caprins -->
                 <a href="pages/caprins.html"><circle cx="200" cy="480" r="35" class="zone-cliquable" /></a>
                 
-                <!-- D: Marre -->
-                <a href="pages/marre.html"><circle cx="150" cy="560" r="35" class="zone-cliquable" /></a>
+                <!-- D: Mare -->
+                <a href="pages/mare.html"><circle cx="150" cy="560" r="35" class="zone-cliquable" /></a>
                 
                 <!-- E: Bovins -->
                 <a href="pages/bovins.html"><circle cx="435" cy="378" r="35" class="zone-cliquable" /></a>
@@ -159,6 +159,33 @@
         } else {
             imageCarte.addEventListener('load', initialiserCarte);
         }
+
+// ==========================================
+// Désynchronisation et fréquences multiples (Gouttes de pluie)
+// ==========================================
+const zones = document.querySelectorAll('.zone-cliquable');
+// Nos 3 fréquences réparties en un tiers chacune
+const durees = ['6s', '8s', '10s'];
+
+zones.forEach((zone, index) => {
+    // L'opérateur modulo (%) permet de distribuer : 6s, 8s, 10s, 6s, 8s, 10s...
+    // Cela garantit que deux éléments HTML voisins n'auront jamais la même durée !
+    const duree = durees[index % 3]; 
+    
+    // Délai aléatoire étalé sur 10 secondes pour un décalage parfait
+    const delaiAleatoire = Math.random() * 10; 
+    
+    // On applique les valeurs à chaque cercle
+    zone.style.animationDuration = duree;
+    zone.style.animationDelay = `${delaiAleatoire}s`;
+});
+
+
+
     </script>
+
+
+
+
 </body>
 </html>
