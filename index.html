@@ -161,28 +161,39 @@
         }
 
 // ==========================================
-// Désynchronisation et fréquences multiples (Gouttes de pluie)
+// Scintillement 100% aléatoire (Clair & Foncé)
 // ==========================================
-const zones = document.querySelectorAll('.zone-cliquable');
-// Nos 3 fréquences réparties en un tiers chacune
-const durees = ['6s', '8s', '10s'];
+// On sélectionne à la fois les cercles normaux ET le cercle de la place des fêtes
+const zones = document.querySelectorAll('.zone-cliquable, .zone-foncee');
 
-zones.forEach((zone, index) => {
-    // L'opérateur modulo (%) permet de distribuer : 6s, 8s, 10s, 6s, 8s, 10s...
-    // Cela garantit que deux éléments HTML voisins n'auront jamais la même durée !
-    const duree = durees[index % 3]; 
+function programmerScintillement(zone) {
+    // 1. On vérifie s'il s'agit de la zone foncée pour choisir la bonne animation
+    const classeAnimation = zone.classList.contains('zone-foncee') ? 'scintillement-foncee-actif' : 'scintillement-actif';
     
-    // Délai aléatoire étalé sur 10 secondes pour un décalage parfait
-    const delaiAleatoire = Math.random() * 10; 
+    // 2. On allume le cercle
+    zone.classList.add(classeAnimation);
     
-    // On applique les valeurs à chaque cercle
-    zone.style.animationDuration = duree;
-    zone.style.animationDelay = `${delaiAleatoire}s`;
-});
+    // 3. On attend la fin de l'animation CSS (2000 ms) pour l'éteindre
+    setTimeout(() => {
+        zone.classList.remove(classeAnimation);
+        
+        // 4. On tire au sort le PROCHAIN délai (entre 5s et 10s)
+        const prochainDelai = Math.random() * (10000 - 5000) + 5000;
+        
+        // 5. On programme la prochaine apparition
+        setTimeout(() => programmerScintillement(zone), prochainDelai);
+        
+    }, 2000); 
+}
+
+// Au chargement, on lance le premier cycle avec un délai de départ entre 0 et 8 secondes
+zones.forEach(zone => {
+    const premierDelai = Math.random() * 8000;
+    setTimeout(() => programmerScintillement(zone), premierDelai);
+});   
 
 
-
-    </script>
+ </script>
 
 
 
