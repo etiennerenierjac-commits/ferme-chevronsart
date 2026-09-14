@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <h1>Boulangerie Paysanne</h1>
+                <h1>La Boulangerie Artisanale</h1>
     </header>
 
     <main class="page-contenu">
@@ -18,13 +18,20 @@
              SECTION 1 : Concept & Céréales 
              Image de fond : photo-boulangerie.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/photo-boulangerie.jpg');">
+         <!-- J'ajoute "flex-direction: column;" au style au cas où ta section soit en flexbox pour que le texte reste bien en dessous du dessin -->
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond1.jpg'); flex-direction: column; justify-content: flex-start;">
+
+ <!-- === TON DESSIN EST PLACÉ ICI === -->
+            <!-- Il va prendre toute la largeur et le fond parallax sera derrière lui ! -->
+            <img src="../images/boulangerie.png" alt="Illustration de la boulangerie" class="image-entete">
+
+
             <div class="conteneur-texte">
                 
                 <!-- Bloc 1 : Le concept -->
                 <div class="texte-explicatif translucide" style="margin-bottom: 20px;">
                     <h2>Le concept : du grain au pain 🌾</h2>
-                    <img src="../images/dessin-boulangerie.png" alt="Dessin du boulanger" class="image-flottante">
+                    <img src="../images/boulangeriefond1.png" alt="Dessin du boulanger" class="image-flottante">
                     <p>La boulangerie paysanne est une démarche globale où <strong>l’artisan maîtrise toute la chaîne de production</strong> : depuis les semis et la culture des céréales, en passant par la mouture de la farine, jusqu’à la cuisson du pain et sa vente directe.</p>
                     <div class="nettoyeur"></div>
                 </div>
@@ -48,7 +55,7 @@
              SECTION 2 : La Meunerie
              Image de fond : fond2.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/fond2.jpg');">
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond2.jpg');">
             <div class="conteneur-texte">
                 
                 <!-- Bloc 3 : La meunerie -->
@@ -70,7 +77,7 @@
              SECTION 3 : La Boulangerie
              Image de fond : fond3.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/fond3.jpg');">
+        <section class="section-parallax" style="background-image: url('../images/boulangeriefond3.jpg');">
             <div class="conteneur-texte">
                 
                 <!-- Bloc 4 : La boulangerie -->

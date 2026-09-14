@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boucherie - Ferme de Chevronsart</title>
-    <!-- Attention ici : on met "../" pour dire "remonte d'un dossier" pour trouver le dossier css -->
+    <title>La Boucherie - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Boucherie</h1>
+        <h1>La Boucherie Artisanale</h1>
     </header>
 
     <main class="page-contenu">
-        <!-- Ici, tu pourras mettre une vraie photo de la boulangerie plus tard -->
-        <!-- Pour l'instant, on met une image grise par défaut -->
-        <img src="../images/photo-boulangerie.jpg" alt="Notre boulangerie paysanne" class="photo-page">
         
-        <div class="texte-explicatif">
-            <h2>Du grain au pain 🌾</h2>
-            <p>Bienvenue dans notre boulangerie paysanne ! Ici, nous transformons les céréales cultivées sur nos propres terres en un pain savoureux, digeste et nourrissant.</p>
-            
-            <p>Notre méthode de travail respecte la tradition :</p>
-            <ul>
-                <li><strong>Farine fraîche :</strong> moulue sur notre propre meule de pierre.</li>
-                <li><strong>Fermentation lente :</strong> au levain naturel pour plus de goût.</li>
-                <li><strong>Cuisson :</strong> réalisée au feu de bois pour une croûte parfaite.</li>
-            </ul>
-        </div>
+        <!-- ==============================================
+             SECTION 1 : La transformation sur place
+             Image de fond : boucheriefond1.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/boucheriefond1.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>De la prairie à l'assiette 🥩</h2>
+                    <p>Notre atelier de boucherie est l'ultime étape pour garantir une traçabilité totale et une qualité irréprochable de nos viandes. C'est ici, au cœur de la ferme, que nous transformons directement une grande partie de notre production.</p>
+                    <p>Nous y préparons la viande issue de nos vaches mixtes ainsi que la moitié de notre élevage porcin (le reste étant valorisé via la filière coopérative locale). Avoir notre propre atelier nous permet de maîtriser chaque étape et de vous garantir une viande 100 % locale et transparente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 2 : L'éthique et le respect
+             Image de fond : boucheriefond2.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/boucheriefond2.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Le respect de l'animal 🤝</h2>
+                    <p>Faire le choix d'une boucherie à la ferme, c'est assumer notre métier d'éleveur jusqu'au bout, avec éthique et responsabilité.</p>
+                    <p>Nous mettons un point d'honneur à valoriser l'animal dans son intégralité (le fameux principe du "de la tête à la queue") afin de lutter contre le gaspillage alimentaire. Chaque morceau a sa noblesse et trouve sa place dans notre vitrine, que ce soit pour une belle pièce à griller, un plat mijoté ou nos préparations maison.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECTION 3 : Le savoir-faire
+             Image de fond : boucheriefond3.jpg
+        =============================================== -->
+        <section class="section-parallax" style="background-image: url('../images/boucheriefond3.jpg');">
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>Charcuteries et viandes maturées 🥓</h2>
+                    <p>Dans notre atelier, nous laissons au temps le soin de sublimer les saveurs. Nos viandes bovines bénéficient d'un temps de maturation optimal pour développer toute leur tendreté et leurs arômes.</p>
+                    <p>Côté porc, nous élaborons nos propres charcuteries artisanales selon des recettes traditionnelles. Nos saucisses, pâtés et découpes fraîches sont préparés avec passion, sans colorants ni conservateurs industriels. Le vrai goût de la viande paysanne, tout simplement !</p>
+                </div>
+            </div>
+        </section>
         
-        <!-- Le bouton magique pour revenir à la carte -->
-        <a href="../index.html" class="bouton-retour">🗺️</a>
+        <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
 
 </body>
