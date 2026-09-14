@@ -89,8 +89,7 @@ body.page-carte main {
     stroke-width: 2; /* Fini les pointillés ! */
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: respiration 2.5s infinite; /* L'animation douce */
-}
+   }
 
 /* --- Quand l'utilisateur pose son doigt ou sa souris dessus --- */
 .zone-cliquable:hover, .zone-cliquable:active {
@@ -99,31 +98,58 @@ body.page-carte main {
     stroke-width: 3;
 }
 
-/* --- L'animation de pulsation --- */
-@keyframes respiration {
-    0%   { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.0); }
-    50%  { stroke: rgba(255, 255, 255, 0.6); fill: rgba(255, 255, 255, 0.1); }
-    100% { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.0); }
+/* --- L'aspect de base de la zone (totalement invisible au repos) --- */
+.zone-cliquable {
+    fill: rgba(255, 255, 255, 0); 
+    stroke: rgba(255, 255, 255, 0); 
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* L'animation de base (la durée sera modifiée par le JS) */
+    animation: goutte-eau 6s infinite ease-in-out; 
 }
 
-/* --- Variante pour les cercles sur fond blanc (Place des Fêtes) --- */
+/* --- Au survol, on force l'apparition --- */
+.zone-cliquable:hover, .zone-cliquable:active {
+    fill: rgba(255, 255, 255, 0.5) !important;
+    stroke: rgba(255, 255, 255, 1) !important;
+    stroke-width: 4 !important;
+}
+
+/* --- L'animation avec apparition brève --- */
+@keyframes goutte-eau {
+    0%, 85%, 100% { 
+        stroke: rgba(255, 255, 255, 0); 
+        stroke-width: 2; 
+        fill: rgba(255, 255, 255, 0); 
+    }
+    92% { 
+        stroke: rgba(255, 255, 255, 0.8); 
+        stroke-width: 4; 
+        fill: rgba(255, 255, 255, 0.3); 
+    }
+}
+
+/* --- Variante zone claire --- */
 .zone-foncee {
-    stroke: rgba(0, 0, 0, 0.4);
-    animation: respiration-foncee 2.5s infinite;
+    fill: rgba(0, 0, 0, 0);
+    stroke: rgba(0, 0, 0, 0);
+    animation: goutte-eau-foncee 6s infinite ease-in-out;
 }
 
-.zone-foncee:hover, .zone-foncee:active {
-    fill: rgba(0, 0, 0, 0.15); /* Voile sombre au survol */
-    stroke: rgba(0, 0, 0, 0.8);
+@keyframes goutte-eau-foncee {
+    0%, 85%, 100% { 
+        stroke: rgba(0, 0, 0, 0); 
+        stroke-width: 2; 
+        fill: rgba(0, 0, 0, 0); 
+    }
+    92% { 
+        stroke: rgba(0, 0, 0, 0.6); 
+        stroke-width: 4; 
+        fill: rgba(0, 0, 0, 0.15); 
+    }
 }
-
-/* L'animation de pulsation en version sombre */
-@keyframes respiration-foncee {
-    0%   { stroke: rgba(0, 0, 0, 0.1); fill: rgba(0, 0, 0, 0.0); }
-    50%  { stroke: rgba(0, 0, 0, 0.5); fill: rgba(0, 0, 0, 0.05); }
-    100% { stroke: rgba(0, 0, 0, 0.1); fill: rgba(0, 0, 0, 0.0); }
-}
-/* Effet quand on touche une zone avec le doigt */
+}/* Effet quand on touche une zone avec le doigt */
 .zone-cliquable:active, 
 .zone-cliquable:hover {
     fill: rgba(255, 255, 255, 0.5); /* Devient plus blanc pour confirmer le clic */
