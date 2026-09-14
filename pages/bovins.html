@@ -9,9 +9,7 @@
 <body>
 
    <header>
-        <!-- Ajout du dessin centré -->
-        <img src="../images/bovins.png" alt="Illustration de la boulangerie" class="image-entete">
-        
+      
         <h1>L'élevage bovin mixte</h1>
     </header>
 
@@ -21,7 +19,14 @@
              SECTION 1 : Le Troupeau
              Image de fond : vachesfond1.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/vachesfond1.jpg');">
+
+<!-- J'ajoute "flex-direction: column;" au style au cas où ta section soit en flexbox pour que le texte reste bien en dessous du dessin -->
+        <section class="section-parallax" style="background-image: url('../images/vachesfond1.jpg'); flex-direction: column; justify-content: flex-start;">
+
+ <!-- === TON DESSIN EST PLACÉ ICI === -->
+            <!-- Il va prendre toute la largeur et le fond parallax sera derrière lui ! -->
+            <img src="../images/bovins.png" alt="Illustration de du troupeau" class="image-entete">
+
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>Un troupeau adapté à notre terroir 🐄</h2>
