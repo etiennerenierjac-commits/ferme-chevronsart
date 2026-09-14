@@ -117,7 +117,7 @@
             }, 50); 
 
            // ==========================================
-            // NOUVEAU : Effet "On rentre dedans" ULTRA FLUIDE (CSS)
+            // NOUVEAU : Effet "On rentre dedans" ULTRA FLUIDE ET PRÉCIS (CSS)
             // ==========================================
             const liens = document.querySelectorAll('.calque-interactif a');
             liens.forEach(lien => {
@@ -125,20 +125,28 @@
                     e.preventDefault(); 
                     const url = this.getAttribute('href');
 
-                    // 1. On cible la zone de la carte
+                    // 1. On cible la zone principale et le cercle précis qu'on a cliqué
                     const mainZone = document.querySelector('main');
+                    const cercle = this.querySelector('.zone-cliquable');
                     
-                    // 2. On définit le point de départ du zoom exactement sous le doigt
-                    mainZone.style.transformOrigin = e.clientX + "px " + e.clientY + "px";
+                    // 2. On calcule la position exacte du centre du cercle par rapport à la page
+                    const rectCercle = cercle.getBoundingClientRect();
+                    const rectMain = mainZone.getBoundingClientRect();
                     
-                    // 3. On active l'accélération matérielle CSS (super fluide)
+                    const centreX = (rectCercle.left + rectCercle.width / 2) - rectMain.left;
+                    const centreY = (rectCercle.top + rectCercle.height / 2) - rectMain.top;
+                    
+                    // 3. On définit ce centre exact comme point de départ du zoom
+                    mainZone.style.transformOrigin = centreX + "px " + centreY + "px";
+                    
+                    // 4. On active l'accélération matérielle CSS (super fluide)
                     mainZone.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
                     
-                    // 4. On zoome fort (scale) et on fond au noir (opacity)
-                    mainZone.style.transform = "scale(3.5)";
+                    // 5. On zoome fort (scale) et on fond au noir (opacity)
+                    mainZone.style.transform = "scale(4)";
                     mainZone.style.opacity = "0";
 
-                    // 5. On charge la page une fois l'animation terminée
+                    // 6. On charge la page une fois l'animation terminée
                     setTimeout(() => {
                         window.location.href = url;
                     }, 500);
