@@ -114,19 +114,26 @@ body.page-carte main {
     stroke: rgba(255, 255, 255, 0.6) !important;
 }
 
-/* --- L'animation gérée par JavaScript --- */
+/* --- L'animation est rallongée à 3.5 secondes --- */
 .scintillement-actif {
-    /* Une apparition douce qui dure 2 secondes */
-    animation: eclat-doux 2s ease-in-out;
+    animation: eclat-doux 3.5s ease-in-out;
+}
+.scintillement-foncee-actif {
+    animation: eclat-doux-fonce 3.5s ease-in-out;
 }
 
+/* --- Un blanc plus fort (0.8 d'opacité) et un trait plus épais --- */
 @keyframes eclat-doux {
     0% { stroke: rgba(255, 255, 255, 0); fill: rgba(255, 255, 255, 0); stroke-width: 2; }
-    /* Un blanc beaucoup plus doux (opacité 0.4) et moins épais */
-    50% { stroke: rgba(255, 255, 255, 0.4); fill: rgba(255, 255, 255, 0.15); stroke-width: 2.5; }
+    50% { stroke: rgba(255, 255, 255, 0.8); fill: rgba(255, 255, 255, 0.3); stroke-width: 4; }
     100% { stroke: rgba(255, 255, 255, 0); fill: rgba(255, 255, 255, 0); stroke-width: 2; }
 }
 
+@keyframes eclat-doux-fonce {
+    0% { stroke: rgba(0, 0, 0, 0); fill: rgba(0, 0, 0, 0); stroke-width: 2; }
+    50% { stroke: rgba(0, 0, 0, 0.6); fill: rgba(0, 0, 0, 0.15); stroke-width: 4; }
+    100% { stroke: rgba(0, 0, 0, 0); fill: rgba(0, 0, 0, 0); stroke-width: 2; }
+}
 /* ==========================================
    Variante douce pour la Place des Fêtes
    ========================================== */
@@ -166,6 +173,27 @@ body.page-carte main {
     stroke: rgba(255, 255, 255, 1); /* Le contour devient 100% blanc */
 }
 
+/* --- Style de l'étiquette flottante --- */
+.etiquette-flottante {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    pointer-events: none; 
+    transform: translate(-50%, -100%); /* Reste statique au-dessus du cercle */
+    animation: fondu-etiquette 3.5s ease-in-out forwards;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Apparition et disparition simples (sans mouvement) --- */
+@keyframes fondu-etiquette {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
 
 /* =========================================
    4. PAGES D'EXPLICATIONS (LES SOUS-PAGES)
@@ -191,6 +219,7 @@ body.page-carte main {
 .conteneur-texte {
     max-width: 600px;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 /* --- Rend les cadres légèrement transparents --- */
@@ -279,3 +308,51 @@ body.page-carte main {
     clear: both;
 }
 
+
+
+/* --- Galerie de photos en bas de page --- */
+.galerie-bas-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.galerie-bas-page img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-raccourcis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    
+    /* --- Les nouveautés pour fixer le menu en bas --- */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Assure que les boutons sont au-dessus de la carte */
+    background: linear-gradient(to top, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0)); /* Joli dégradé pour la lisibilité */
+    pointer-events: auto; /* Garantit que le clic fonctionne */
+}
+.bouton-raccourci {
+    background-color: #4CAF50; /* Ton vert par défaut */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-raccourci:hover {
+    background-color: #388E3C;
+}
