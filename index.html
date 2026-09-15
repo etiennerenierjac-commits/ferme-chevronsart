@@ -16,6 +16,7 @@
     </header>
 
     <main>
+        <!-- ZONE CARTE AVEC ZOOM -->
         <div class="map-container">
             <!-- L'image de fond principale -->
             <img src="images/Illustration ferme 1.jpg" alt="Carte de la Ferme" id="carte-ferme">
@@ -24,63 +25,86 @@
             <svg class="calque-interactif" viewBox="0 0 1200 850" preserveAspectRatio="xMidYMid meet">
                 
                 <!-- A: Barbecue -->
-                <a href="pages/barbecue.html"><circle cx="280" cy="340" r="30" class="zone-cliquable" /></a>
+                <a href="pages/barbecue.html"><circle cx="280" cy="340" r="30" class="zone-cliquable" data-nom="Espace Barbecue" /></a>
                 
                 <!-- B: Poulailler -->
-                <a href="pages/poulailler.html"><circle cx="200" cy="400" r="35" class="zone-cliquable" /></a>
+                <a href="pages/poulailler.html"><circle cx="200" cy="400" r="35" class="zone-cliquable" data-nom="Le Poulailler" /></a>
                 
                 <!-- C: Caprins -->
-                <a href="pages/caprins.html"><circle cx="200" cy="480" r="35" class="zone-cliquable" /></a>
+                <a href="pages/caprins.html"><circle cx="200" cy="480" r="35" class="zone-cliquable" data-nom="Les Chèvres" /></a>
                 
                 <!-- D: Mare -->
-                <a href="pages/mare.html"><circle cx="150" cy="560" r="35" class="zone-cliquable" /></a>
+                <a href="pages/mare.html"><circle cx="150" cy="560" r="35" class="zone-cliquable" data-nom="La Mare" /></a>
                 
                 <!-- E: Bovins -->
-                <a href="pages/bovins.html"><circle cx="435" cy="378" r="35" class="zone-cliquable" /></a>
+                <a href="pages/bovins.html"><circle cx="435" cy="378" r="35" class="zone-cliquable" data-nom="Les Bovins" /></a>
                 
                 <!-- F: Logement -->
-                <a href="pages/logement.html"><circle cx="400" cy="490" r="30" class="zone-cliquable" /></a>
+                <a href="pages/logement.html"><circle cx="400" cy="490" r="30" class="zone-cliquable" data-nom="Logement Insolite" /></a>
                 
                 <!-- G: Porcs -->
-                <a href="pages/porcs.html"><circle cx="390" cy="610" r="35" class="zone-cliquable" /></a>
+                <a href="pages/porcs.html"><circle cx="390" cy="610" r="35" class="zone-cliquable" data-nom="Les Porcs" /></a>
                 
                 <!-- H: Boulangerie -->
-                <a href="pages/boulangerie.html"><circle cx="530" cy="530" r="35" class="zone-cliquable" /></a>
+                <a href="pages/boulangerie.html"><circle cx="530" cy="530" r="35" class="zone-cliquable" data-nom="La Boulangerie" /></a>
                 
-                <!-- I: cereales -->
-                <a href="pages/cereales.html"><circle cx="680" cy="380" r="25" class="zone-cliquable" /></a>
+                <!-- I: Cereales -->
+                <a href="pages/cereales.html"><circle cx="680" cy="380" r="25" class="zone-cliquable" data-nom="Céréales" /></a>
                 
-                <!-- S: Chèvrerie (Insérée en ellipse sous I et au-dessus de J/K) -->
-                <a href="pages/chevrerie.html"><ellipse cx="650" cy="420" rx="25" ry="10" class="zone-cliquable" /></a>
+                <!-- S: Chèvrerie -->
+                <a href="pages/chevrerie.html"><ellipse cx="650" cy="420" rx="25" ry="10" class="zone-cliquable" data-nom="La Chèvrerie" /></a>
                 
                 <!-- J: Étable -->
-                <a href="pages/etable.html"><circle cx="610" cy="450" r="20" class="zone-cliquable" /></a>
+                <a href="pages/etable.html"><circle cx="610" cy="450" r="20" class="zone-cliquable" data-nom="L'Étable" /></a>
                 
                 <!-- K: Laiterie -->
-                <a href="pages/laiterie.html"><circle cx="660" cy="450" r="20" class="zone-cliquable" id="centre-carte" /></a>
+                <a href="pages/laiterie.html"><circle cx="660" cy="450" r="20" class="zone-cliquable" id="centre-carte" data-nom="La Laiterie" /></a>
                 
                 <!-- L: Fromagerie -->
-                <a href="pages/fromagerie.html"><circle cx="695" cy="430" r="20" class="zone-cliquable" /></a>
+                <a href="pages/fromagerie.html"><circle cx="695" cy="430" r="20" class="zone-cliquable" data-nom="La Fromagerie" /></a>
                 
                 <!-- M: Boucherie -->
-                <a href="pages/boucherie.html"><circle cx="625" cy="515" r="20" class="zone-cliquable" /></a>
+                <a href="pages/boucherie.html"><circle cx="625" cy="515" r="20" class="zone-cliquable" data-nom="La Boucherie" /></a>
                 
                 <!-- N: Magasin -->
-                <a href="pages/magasin.html"><circle cx="665" cy="515" r="20" class="zone-cliquable" /></a>
+                <a href="pages/magasin.html"><circle cx="665" cy="515" r="20" class="zone-cliquable" data-nom="Le Magasin" /></a>
                 
                 <!-- O: Place des Fêtes -->
-                <a href="pages/fete.html"><circle cx="700" cy="467" r="15" class="zone-cliquable zone-foncee" /></a>
+                <a href="pages/fete.html"><circle cx="700" cy="467" r="15" class="zone-cliquable zone-foncee" data-nom="Place des Fêtes" /></a>
                 
                 <!-- P: Communs -->
-                <a href="pages/communs.html"><circle cx="740" cy="480" r="20" class="zone-cliquable" /></a>
+                <a href="pages/commun.html"><circle cx="740" cy="480" r="20" class="zone-cliquable" data-nom="Espace Commun" /></a>
                 
                 <!-- Q: Pédagogique -->
-                <a href="pages/pedagogique.html"><circle cx="750" cy="530" r="30" class="zone-cliquable" /></a>
+                <a href="pages/pedagogique.html"><circle cx="750" cy="530" r="30" class="zone-cliquable" data-nom="Ferme Pédagogique" /></a>
                 
-                <!-- R: Verger (Très grand cercle) -->
-                <a href="pages/verger.html"><circle cx="1020" cy="400" r="120" class="zone-cliquable" /></a>
+                <!-- R: Verger -->
+                <a href="pages/verger.html"><circle cx="1020" cy="400" r="120" class="zone-cliquable" data-nom="Le Verger" /></a>
                 
             </svg>
+        </div> <!-- Fin de la zone de la carte -->
+
+        <!-- MENU DES BOUTONS (Sorti de la zone de carte pour être cliquable !) -->
+        <div class="menu-raccourcis">
+            <a href="pages/barbecue.html" class="bouton-raccourci">Barbecue</a>
+            <a href="pages/boucherie.html" class="bouton-raccourci">Boucherie</a>
+            <a href="pages/boulangerie.html" class="bouton-raccourci">Boulangerie</a>
+            <a href="pages/bovins.html" class="bouton-raccourci">Bovins</a>
+            <a href="pages/caprins.html" class="bouton-raccourci">Caprins</a>
+            <a href="pages/cereales.html" class="bouton-raccourci">Céréales</a>
+            <a href="pages/chevrerie.html" class="bouton-raccourci">Chèvrerie</a>
+            <a href="pages/commun.html" class="bouton-raccourci">Espace Commun</a>
+            <a href="pages/etable.html" class="bouton-raccourci">Étable</a>
+            <a href="pages/fete.html" class="bouton-raccourci">Place des Fêtes</a>
+            <a href="pages/fromagerie.html" class="bouton-raccourci">Fromagerie</a>
+            <a href="pages/laiterie.html" class="bouton-raccourci">Laiterie</a>
+            <a href="pages/logement.html" class="bouton-raccourci">Logement Insolite</a>
+            <a href="pages/magasin.html" class="bouton-raccourci">Magasin</a>
+            <a href="pages/mare.html" class="bouton-raccourci">La Mare</a>
+            <a href="pages/pedagogique.html" class="bouton-raccourci">Ferme Pédagogique</a>
+            <a href="pages/porcs.html" class="bouton-raccourci">Porcs</a>
+            <a href="pages/poulailler.html" class="bouton-raccourci">Poulailler</a>
+            <a href="pages/verger.html" class="bouton-raccourci">Verger</a>
         </div>
     </main>
 
@@ -97,10 +121,10 @@
             const mainZone = document.querySelector('main');
             
             const monPanzoom = Panzoom(mapContainer, {
-                maxScale: 4, /* J'ai augmenté un peu le zoom max pour un meilleur effet "plongeon" */
+                maxScale: 4, 
                 minScale: 0.3,
                 step: 0.1,
-                animate: true /* Active les animations fluides */
+                animate: true 
             });
 
             mapContainer.parentElement.addEventListener('wheel', monPanzoom.zoomWithWheel);
@@ -117,7 +141,7 @@
             }, 50); 
 
            // ==========================================
-            // NOUVEAU : Effet "On rentre dedans" ULTRA FLUIDE ET PRÉCIS (CSS)
+            // Effet "On rentre dedans" ULTRA FLUIDE
             // ==========================================
             const liens = document.querySelectorAll('.calque-interactif a');
             liens.forEach(lien => {
@@ -125,28 +149,20 @@
                     e.preventDefault(); 
                     const url = this.getAttribute('href');
 
-                    // 1. On cible la zone principale et le cercle précis qu'on a cliqué
                     const mainZone = document.querySelector('main');
-                    const cercle = this.querySelector('.zone-cliquable');
+                    const cercle = this.querySelector('.zone-cliquable, .zone-foncee');
                     
-                    // 2. On calcule la position exacte du centre du cercle par rapport à la page
                     const rectCercle = cercle.getBoundingClientRect();
                     const rectMain = mainZone.getBoundingClientRect();
                     
                     const centreX = (rectCercle.left + rectCercle.width / 2) - rectMain.left;
                     const centreY = (rectCercle.top + rectCercle.height / 2) - rectMain.top;
                     
-                    // 3. On définit ce centre exact comme point de départ du zoom
                     mainZone.style.transformOrigin = centreX + "px " + centreY + "px";
-                    
-                    // 4. On active l'accélération matérielle CSS (super fluide)
                     mainZone.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-                    
-                    // 5. On zoome fort (scale) et on fond au noir (opacity)
                     mainZone.style.transform = "scale(4)";
                     mainZone.style.opacity = "0";
 
-                    // 6. On charge la page une fois l'animation terminée
                     setTimeout(() => {
                         window.location.href = url;
                     }, 500);
@@ -160,43 +176,43 @@
             imageCarte.addEventListener('load', initialiserCarte);
         }
 
-// ==========================================
-// Scintillement 100% aléatoire (Clair & Foncé)
-// ==========================================
-// On sélectionne à la fois les cercles normaux ET le cercle de la place des fêtes
-const zones = document.querySelectorAll('.zone-cliquable, .zone-foncee');
+        // ==========================================
+        // Scintillement 100% aléatoire (Clair & Foncé)
+        // ==========================================
+        const zones = document.querySelectorAll('.zone-cliquable, .zone-foncee');
 
-function programmerScintillement(zone) {
-    // 1. On vérifie s'il s'agit de la zone foncée pour choisir la bonne animation
-    const classeAnimation = zone.classList.contains('zone-foncee') ? 'scintillement-foncee-actif' : 'scintillement-actif';
-    
-    // 2. On allume le cercle
-    zone.classList.add(classeAnimation);
-    
-    // 3. On attend la fin de l'animation CSS (2000 ms) pour l'éteindre
-    setTimeout(() => {
-        zone.classList.remove(classeAnimation);
-        
-        // 4. On tire au sort le PROCHAIN délai (entre 5s et 10s)
-        const prochainDelai = Math.random() * (10000 - 5000) + 5000;
-        
-        // 5. On programme la prochaine apparition
-        setTimeout(() => programmerScintillement(zone), prochainDelai);
-        
-    }, 2000); 
-}
+        function programmerScintillement(zone) {
+            const classeAnimation = zone.classList.contains('zone-foncee') ? 'scintillement-foncee-actif' : 'scintillement-actif';
+            zone.classList.add(classeAnimation);
+            
+            const nomLieu = zone.getAttribute('data-nom');
+            let etiquette = null;
+            
+            if (nomLieu) {
+                etiquette = document.createElement('div');
+                etiquette.className = 'etiquette-flottante';
+                etiquette.textContent = nomLieu;
+                document.body.appendChild(etiquette);
+                
+                const rect = zone.getBoundingClientRect();
+                etiquette.style.left = (rect.left + window.scrollX + rect.width / 2) + 'px';
+                // La ligne ci-dessous utilise -15 pour s'assurer que le nom soit bien AU-DESSUS du cercle
+                etiquette.style.top = (rect.top + window.scrollY - 15) + 'px';
+            }
 
-// Au chargement, on lance le premier cycle avec un délai de départ entre 0 et 8 secondes
-zones.forEach(zone => {
-    const premierDelai = Math.random() * 8000;
-    setTimeout(() => programmerScintillement(zone), premierDelai);
-});   
+            setTimeout(() => {
+                zone.classList.remove(classeAnimation);
+                if (etiquette) etiquette.remove(); 
+                
+                const prochainDelai = Math.random() * (10000 - 5000) + 5000;
+                setTimeout(() => programmerScintillement(zone), prochainDelai);
+            }, 3500); 
+        }
 
-
- </script>
-
-
-
-
+        zones.forEach(zone => {
+            const premierDelai = Math.random() * 8000;
+            setTimeout(() => programmerScintillement(zone), premierDelai);
+        });   
+    </script>
 </body>
 </html>
