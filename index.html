@@ -15,9 +15,39 @@
         <p>Touchez un bâtiment ou un animal pour explorer</p>
     </header>
 
+
+
     <main>
+
+<!-- NOUVEAU MENU DÉROULANT -->
+    <div class="conteneur-menu">
+        <button id="bouton-menu" class="bouton-menu">☰ Menu de la ferme</button>
+        <nav id="liste-menu" class="liste-menu cache">
+            <a href="pages/barbecue.html">Barbecue</a>
+            <a href="pages/boucherie.html">Boucherie</a>
+            <a href="pages/boulangerie.html">Boulangerie</a>
+            <a href="pages/bovins.html">Bovins</a>
+            <a href="pages/caprins.html">Caprins</a>
+            <a href="pages/cereales.html">Céréales</a>
+            <a href="pages/chevrerie.html">Chèvrerie</a>
+            <a href="pages/commun.html">Espace Commun</a>
+            <a href="pages/etable.html">Étable</a>
+            <a href="pages/fete.html">Place des Fêtes</a>
+            <a href="pages/fromagerie.html">Fromagerie</a>
+            <a href="pages/laiterie.html">Laiterie</a>
+            <a href="pages/logement.html">Logement Insolite</a>
+            <a href="pages/magasin.html">Magasin</a>
+            <a href="pages/mare.html">La Mare</a>
+            <a href="pages/pedagogique.html">Ferme Pédagogique</a>
+            <a href="pages/porcs.html">Porcs</a>
+            <a href="pages/poulailler.html">Poulailler</a>
+            <a href="pages/verger.html">Verger</a>
+        </nav>
+    </div>
+
         <!-- ZONE CARTE AVEC ZOOM -->
         <div class="map-container">
+
             <!-- L'image de fond principale -->
             <img src="images/Illustration ferme 1.jpg" alt="Carte de la Ferme" id="carte-ferme">
             
@@ -82,30 +112,11 @@
                 <a href="pages/verger.html"><circle cx="1020" cy="400" r="120" class="zone-cliquable" data-nom="Le Verger" /></a>
                 
             </svg>
-        </div> <!-- Fin de la zone de la carte -->
 
-        <!-- MENU DES BOUTONS (Sorti de la zone de carte pour être cliquable !) -->
-        <div class="menu-raccourcis">
-            <a href="pages/barbecue.html" class="bouton-raccourci">Barbecue</a>
-            <a href="pages/boucherie.html" class="bouton-raccourci">Boucherie</a>
-            <a href="pages/boulangerie.html" class="bouton-raccourci">Boulangerie</a>
-            <a href="pages/bovins.html" class="bouton-raccourci">Bovins</a>
-            <a href="pages/caprins.html" class="bouton-raccourci">Caprins</a>
-            <a href="pages/cereales.html" class="bouton-raccourci">Céréales</a>
-            <a href="pages/chevrerie.html" class="bouton-raccourci">Chèvrerie</a>
-            <a href="pages/commun.html" class="bouton-raccourci">Espace Commun</a>
-            <a href="pages/etable.html" class="bouton-raccourci">Étable</a>
-            <a href="pages/fete.html" class="bouton-raccourci">Place des Fêtes</a>
-            <a href="pages/fromagerie.html" class="bouton-raccourci">Fromagerie</a>
-            <a href="pages/laiterie.html" class="bouton-raccourci">Laiterie</a>
-            <a href="pages/logement.html" class="bouton-raccourci">Logement Insolite</a>
-            <a href="pages/magasin.html" class="bouton-raccourci">Magasin</a>
-            <a href="pages/mare.html" class="bouton-raccourci">La Mare</a>
-            <a href="pages/pedagogique.html" class="bouton-raccourci">Ferme Pédagogique</a>
-            <a href="pages/porcs.html" class="bouton-raccourci">Porcs</a>
-            <a href="pages/poulailler.html" class="bouton-raccourci">Poulailler</a>
-            <a href="pages/verger.html" class="bouton-raccourci">Verger</a>
-        </div>
+
+ </div> <!-- Fin de la zone de la carte -->
+
+
     </main>
 
    <!-- 1. On charge le moteur de zoom depuis internet -->
@@ -176,7 +187,7 @@
             imageCarte.addEventListener('load', initialiserCarte);
         }
 
-        // ==========================================
+      // ==========================================
         // Scintillement 100% aléatoire (Clair & Foncé)
         // ==========================================
         const zones = document.querySelectorAll('.zone-cliquable, .zone-foncee');
@@ -192,27 +203,55 @@
                 etiquette = document.createElement('div');
                 etiquette.className = 'etiquette-flottante';
                 etiquette.textContent = nomLieu;
-                document.body.appendChild(etiquette);
                 
-                const rect = zone.getBoundingClientRect();
-                etiquette.style.left = (rect.left + window.scrollX + rect.width / 2) + 'px';
-                // La ligne ci-dessous utilise -15 pour s'assurer que le nom soit bien AU-DESSUS du cercle
-                etiquette.style.top = (rect.top + window.scrollY - 15) + 'px';
+                // 1. On attache l'étiquette DANS la carte (pour qu'elle zoome avec)
+                document.querySelector('.map-container').appendChild(etiquette);
+                
+                // 2. On calcule sa position en pourcentage depuis le centre du cercle (cx/cy)
+                const cx = parseFloat(zone.getAttribute('cx'));
+                const cy = parseFloat(zone.getAttribute('cy'));
+                
+                etiquette.style.left = (cx / 1200 * 100) + '%';
+                etiquette.style.top = (cy / 850 * 100) + '%';
             }
 
             setTimeout(() => {
                 zone.classList.remove(classeAnimation);
                 if (etiquette) etiquette.remove(); 
                 
-                const prochainDelai = Math.random() * (10000 - 5000) + 5000;
+                // NOUVEAU : Fréquence d'apparition beaucoup plus lente ! (entre 15 et 25 secondes d'attente)
+                const prochainDelai = Math.random() * (25000 - 15000) + 15000;
                 setTimeout(() => programmerScintillement(zone), prochainDelai);
             }, 3500); 
         }
 
+        // Au chargement, on étale le premier allumage sur 30 secondes
+        // pour éviter qu'ils n'apparaissent tous en même temps !
         zones.forEach(zone => {
-            const premierDelai = Math.random() * 8000;
+            const premierDelai = Math.random() * 30000;
             setTimeout(() => programmerScintillement(zone), premierDelai);
-        });   
+        });
+
+	// ==========================================
+        // Gestion du Menu Déroulant
+        // ==========================================
+        const boutonMenu = document.getElementById('bouton-menu');
+        const listeMenu = document.getElementById('liste-menu');
+
+        // Ouvre ou ferme au clic sur le bouton
+        boutonMenu.addEventListener('click', (e) => {
+            e.stopPropagation(); // Évite que le clic ne ferme immédiatement le menu
+            listeMenu.classList.toggle('cache');
+        });
+
+        // Ferme le menu si on clique n'importe où ailleurs sur la page
+        document.addEventListener('click', (e) => {
+            if (!listeMenu.classList.contains('cache') && !listeMenu.contains(e.target)) {
+                listeMenu.classList.add('cache');
+            }
+        });
+
+
     </script>
 </body>
 </html>
