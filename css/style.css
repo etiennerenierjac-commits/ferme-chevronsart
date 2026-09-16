@@ -183,11 +183,14 @@ body.page-carte main {
     font-size: 0.85em;
     font-weight: bold;
     pointer-events: none; 
-    transform: translate(-50%, -100%); /* Reste statique au-dessus du cercle */
+    
+    /* NOUVEAU : Centrage du texte et alignement parfait */
+    text-align: center; 
+    transform: translate(-50%, -200%); /* -50% pour centrer, -200% pour remonter au-dessus du cercle */
+    
     animation: fondu-etiquette 3.5s ease-in-out forwards;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-
 /* --- Apparition et disparition simples (sans mouvement) --- */
 @keyframes fondu-etiquette {
     0%   { opacity: 0; }
@@ -327,32 +330,63 @@ body.page-carte main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.menu-raccourcis {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    
-    /* --- Les nouveautés pour fixer le menu en bas --- */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100; /* Assure que les boutons sont au-dessus de la carte */
-    background: linear-gradient(to top, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0)); /* Joli dégradé pour la lisibilité */
-    pointer-events: auto; /* Garantit que le clic fonctionne */
+/* --- Menu Déroulant --- */
+.conteneur-menu {
+    position: absolute; /* S'accroche au conteneur de la carte */
+    top: 20px; /* Espace depuis le haut de la carte */
+    left: 20px; /* Espace depuis la gauche de la carte */
+    z-index: 1000; /* Le place au-dessus de l'image et du SVG */
 }
-.bouton-raccourci {
-    background-color: #4CAF50; /* Ton vert par défaut */
+
+.bouton-menu {
+    background-color: #4CAF50;
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 30px;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: background-color 0.3s ease;
 }
 
-.bouton-raccourci:hover {
+.bouton-menu:hover {
     background-color: #388E3C;
+}
+
+.liste-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.95);
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    max-height: 60vh; /* Ajoute une barre de défilement si l'écran est petit */
+    min-width: 220px;
+}
+
+/* Classe pour cacher le menu */
+.liste-menu.cache {
+    display: none;
+}
+
+.liste-menu a {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.liste-menu a:last-child {
+    border-bottom: none;
+}
+
+.liste-menu a:hover {
+    background-color: #e8f5e9;
+    color: #4CAF50;
 }
