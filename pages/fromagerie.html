@@ -9,18 +9,21 @@
 <body>
 
     <header>
-<!-- Ajout du dessin centré -->
-        <img src="../images/fromagerie.png" alt="Illustration de la boulangerie" class="image-entete">
         <h1>La Fromagerie</h1>
     </header>
 
     <main class="page-contenu">
         
+        <section class="section-parallax" style="background-image: url('../images/fromageriefond1.jpg'); flex-direction: column; justify-content: flex-			start;">
+
+
+<!-- Ajout du dessin centré -->
+        <img src="../images/fromagerie.png" alt="Illustration de la boulangerie" class="image-entete">
+
         <!-- ==============================================
              SECTION 1 : La transformation
-             Image de fond : fromageriefond1.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/fromageriefond1.jpg');">
+
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>De l'étable à l'affinage 🧀</h2>
@@ -28,13 +31,12 @@
                     <p>Pour notre élevage bovin, environ 20 % de nos 120 000 litres de lait annuels sont valorisés et transformés sur place[cite: 1]. Le travail rigoureux de notre éleveuse-fromagère permet de produire <strong>125 kg de fromages par semaine</strong>[cite: 1] !</p>
                 </div>
             </div>
-        </section>
+   
 
         <!-- ==============================================
              SECTION 2 : Nos techniques artisanes
-             Image de fond : fromageriefond2.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/fromageriefond2.jpg');">
+
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>Un savoir-faire au lait cru 🤲</h2>
@@ -47,13 +49,12 @@
                     </ul>
                 </div>
             </div>
-        </section>
+ 
 
         <!-- ==============================================
              SECTION 3 : Nos fromages
-             Image de fond : fromageriefond3.jpg
         =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/fromageriefond3.jpg');">
+
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>Nos différents types de fromages 🏷️</h2>
@@ -65,7 +66,16 @@
                     </ul>
                 </div>
             </div>
+
+     <!-- GALERIE DE PHOTOS EN BAS DE PAGE -->
+        <section class="galerie-bas-page">
+            <img src="../images/fromageriefond2.jpg" alt="x">
+            <img src="../images/fromageriefond3.jpg" alt="x">
+            <img src="../images/fromageriefond4.jpg" alt="x">
         </section>
+        
+      
+      </section> <!-- FIN DE LA SECTION PARALLAX UNIQUE -->
         
         <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>

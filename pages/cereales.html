@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Céréales - Ferme de Chevronsart</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Ajout de styles spécifiques pour les schémas/tableaux de cette page -->
     <style>
         .schema-agronomique {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background-color: rgba(255, 255, 255, 0.95);
             font-size: 0.9em;
         }
         .schema-agronomique th, .schema-agronomique td {
@@ -27,7 +25,6 @@
         }
         .formule-scientifique {
             text-align: center;
-            font-style: italic;
             margin: 15px 0;
             padding: 10px;
             background-color: rgba(0,0,0,0.05);
@@ -43,104 +40,76 @@
 
     <main class="page-contenu">
         
-        <!-- ==============================================
-             SECTION 1 : L'étude du sol
-             Image de fond : cerealesfond1.jpg
-        =============================================== -->
+        <!-- UNIQUE IMAGE DE FOND POUR TOUT LE TEXTE -->
         <section class="section-parallax" style="background-image: url('../images/cerealesfond1.jpg');">
+            
+            <!-- Bloc 1 : Le Sol -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>L'étude agronomique de notre sol 🪱</h2>
-                    <p>Au cœur de notre projet agroécologique, l'atelier "céréales-meunerie-boulangerie" repose avant tout sur une compréhension intime de notre terre[cite: 1]. Nos 9 hectares cultivables, situés aux portes des Ardennes, bénéficient d'un sol de type limoneux avec un pH calcaire de 7,5[cite: 1].</p>
-                    <p>Historiquement exploitées en prairies permanentes, ces terres jouissent d'un taux de matière organique exceptionnellement élevé de 6,3 % et d'un rapport Carbone/Azote (C/N) de 11,8, ce qui indique une excellente activité biologique et une bonne capacité à décomposer la matière organique[cite: 1].</p>
-                    <p>Pour s'assurer que notre terre ne se dégradera pas sous l'effet de la pluie, nous avons calculé l'Indice de Battance (IB). Cet indice scientifique s'exprime ainsi :</p>
+                    <p>Notre atelier céréalier repose sur 9 hectares d'une terre limoneuse au pH de 7,5[cite: 1]. Historiquement en prairies, ce sol possède un taux exceptionnel de matière organique (6,3 %)[cite: 1].</p>
+                    <p>Pour nous assurer que le sol résistera aux fortes pluies, nous avons calculé son Indice de Battance (IB) :</p>
                     
                     <div class="formule-scientifique">
                         $$IB = \frac{(1,5 \times \% \text{limons fins}) + (0,75 \times \% \text{limons grossiers})}{\% \text{argiles} + (10 \times \% \text{MO})}$$
                     </div>
 
-                    <p>Notre résultat s'élève à 1,034[cite: 1]. Étant largement inférieur au seuil critique de 1,4, cela signifie que notre sol est robuste, poreux, et ne risque pas de former une croûte imperméable sous les fortes pluies[cite: 1].</p>
+                    <p>Avec un résultat de 1,034 (bien en dessous du seuil critique de 1,4), notre terre est robuste et poreuse[cite: 1].</p>
                 </div>
             </div>
-        </section>
 
-        <!-- ==============================================
-             SECTION 2 : La Rotation (avec Schéma)
-             Image de fond : cerealesfond2.jpg
-        =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/cerealesfond2.jpg');">
+            <!-- Bloc 2 : La Rotation -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>Schéma de notre rotation sur 6 ans 🔄</h2>
-                    <p>Pour cultiver sans aucun pesticide ni engrais chimique de synthèse, notre principale technique est la rotation[cite: 1]. Nos champs sont divisés en petites parcelles de 1,5 hectare qui suivent un cycle précis de 6 années, conçu pour briser le cycle des adventices (mauvaises herbes) et régénérer le sol[cite: 1].</p>
-                    
+                    <h2>Notre rotation sur 6 ans 🔄</h2>
+                    <p>Sans aucun engrais chimique, notre meilleure arme est la rotation sur nos parcelles de 1,5 hectare[cite: 1] :</p>
                     <table class="schema-agronomique">
                         <thead>
                             <tr>
                                 <th>Année</th>
-                                <th>Culture implantée</th>
-                                <th>Rôle agronomique principal</th>
+                                <th>Culture</th>
+                                <th>Rôle agronomique</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Années 1 à 3</strong></td>
-                                <td>Luzerne + Dactyle (Prairie)</td>
-                                <td>Tête de rotation : nettoie le sol, structure la terre en profondeur grâce à un système racinaire puissant, et fixe naturellement l'azote de l'air[cite: 1].</td>
+                                <td><strong>1 à 3</strong></td>
+                                <td>Luzerne + Dactyle</td>
+                                <td>Nettoie le sol, structure la terre et fixe l'azote naturel[cite: 1].</td>
                             </tr>
                             <tr>
-                                <td><strong>Année 4</strong></td>
-                                <td>Blé tendre d'hiver + Féverole</td>
-                                <td>Culture principale très exigeante : profite de la fertilité maximale laissée par la luzerne[cite: 1]. La féverole apporte un supplément nutritif[cite: 1].</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Année 5</strong></td>
+                                <td><strong>4 et 5</strong></td>
                                 <td>Blé tendre d'hiver</td>
-                                <td>Culture principale : seconde récolte consécutive pour assurer les volumes nécessaires à la boulangerie[cite: 1].</td>
+                                <td>Culture reine pour la boulangerie, exigeante en fertilité[cite: 1].</td>
                             </tr>
                             <tr>
-                                <td><strong>Année 6</strong></td>
-                                <td>Seigle ou Engrain</td>
-                                <td>Culture secondaire rustique : capable de s'épanouir et de produire du grain sur un sol devenu plus pauvre en fin de cycle, avant le retour à la prairie[cite: 1].</td>
+                                <td><strong>6</strong></td>
+                                <td>Seigle / Engrain</td>
+                                <td>Cultures très rustiques adaptées aux sols en fin de cycle[cite: 1].</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </section>
 
-        <!-- ==============================================
-             SECTION 3 : Fertilisation et Bilan
-             Image de fond : cerealesfond3.jpg
-        =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/cerealesfond3.jpg');">
+            <!-- Bloc 3 : Fertilité et Récoltes -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>La gestion de la fertilité et des équilibres 🧪</h2>
-                    <p>Cultiver des céréales exporte des nutriments hors de la parcelle. Pour compenser ces sorties, nous réalisons des calculs précis (bilan humique et bilan azoté)[cite: 1].</p>
-                    <p>Le retournement de nos anciennes prairies va initialement libérer de grandes quantités d'azote, suffisant largement à nourrir nos premiers blés[cite: 1]. Toutefois, à long terme, la minéralisation épuise le stock de matière organique (environ 3 tonnes perdues par an et par hectare)[cite: 1]. C'est ici que l'association avec nos élevages prend tout son sens :</p>
-                    <ul>
-                        <li><strong>Bilan Phospho-Potassique :</strong> Nos analyses révèlent des taux faibles en phosphore et potassium[cite: 1]. L'apport de fumiers compostés issus de nos étables (vaches, porcs, chèvres) est indispensable[cite: 1].</li>
-                        <li><strong>Le cercle vertueux :</strong> Pour 10 tonnes de fumier épandues par hectare, nous restaurons 2 tonnes de matière organique stable dans le sol[cite: 1]. Nos céréales nourrissent les humains, leurs pailles servent de litière aux animaux, et cette litière nourrit à son tour la terre de nos futurs blés[cite: 1].</li>
-                    </ul>
+                    <h2>Fertilité et semences paysannes 🌾</h2>
+                    <p>Pour compenser l'exportation des nutriments (phosphore et potassium), nous amendons la terre avec les fumiers compostés de nos élevages[cite: 1]. C'est un cercle vertueux !</p>
+                    <p>Nous semons des "cultures de population", mélangeant des blés rustiques (Renan, Gwen, Geny)[cite: 1]. Grâce à cela, nous visons une production annuelle de 12,5 à 15 tonnes de céréales pour alimenter notre boulangerie[cite: 1].</p>
                 </div>
             </div>
+            
+
+        <!-- GALERIE DE PHOTOS EN BAS DE PAGE -->
+        <section class="galerie-bas-page">
+            <img src="../images/cerealesphoto1.jpg" alt="Rotation des cultures">
+            <img src="../images/cerealesphoto2.jpg" alt="Gestion de la fertilité">
+            <img src="../images/cerealesphoto3.jpg" alt="Récolte des céréales">
         </section>
 
-        <!-- ==============================================
-             SECTION 4 : Variétés et récoltes
-             Image de fond : cerealesfond4.jpg
-        =============================================== -->
-        <section class="section-parallax" style="background-image: url('../images/cerealesfond4.jpg');">
-            <div class="conteneur-texte">
-                <div class="texte-explicatif translucide">
-                    <h2>Variétés paysannes et objectifs de récolte 🌾</h2>
-                    <p>Pour garantir la résilience de nos cultures face au climat, nous ne semons pas de variétés industrielles clonées, mais des "cultures de population" qui évoluent sur notre terroir[cite: 1].</p>
-                    <p>Notre blé tendre est un mélange de variétés rustiques (Renan, Gwen et Geny) reconnues pour leur résistance naturelle aux maladies, leur forte capacité à concurrencer les adventices, et leurs excellentes qualités pour la panification au levain[cite: 1]. Pour les terres plus frugales de fin de rotation, nous semons des seigles locaux (Couvin) ou de l'engrain (Rouge de guillon) dont la rusticité est extrême[cite: 1].</p>
-                    <p>Grâce à ce modèle minutieux et respectueux du vivant, nous visons un rendement pérenne de 3 à 4 tonnes par hectare[cite: 1]. Cela nous permettra de récolter entre 12,5 et 15 tonnes de céréales par an, le volume nécessaire pour faire tourner notre boulangerie artisanale et nourrir notre communauté[cite: 1] !</p>
-                </div>
-            </div>
-        </section>
+ 	</section> <!-- FIN DE LA SECTION PARALLAX UNIQUE -->
         
         <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
