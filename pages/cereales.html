@@ -12,6 +12,7 @@
             margin: 20px 0;
             background-color: rgba(255, 255, 255, 0.95);
             font-size: 0.9em;
+            color: #333;
         }
         .schema-agronomique th, .schema-agronomique td {
             border: 1px solid #777;
@@ -26,9 +27,11 @@
         .formule-scientifique {
             text-align: center;
             margin: 15px 0;
-            padding: 10px;
-            background-color: rgba(0,0,0,0.05);
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
+            color: #333;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -40,29 +43,30 @@
 
     <main class="page-contenu">
         
-        <!-- UNIQUE IMAGE DE FOND POUR TOUT LE TEXTE -->
-        <section class="section-parallax" style="background-image: url('../images/cerealesfond1.jpg');">
+        <section class="section-parallax" style="background-image: url('../images/cerealesfond1.jpg'); flex-direction: column; justify-content: flex-start;">
             
+            <img src="../images/cereales.png" alt="Illustration des champs de céréales" class="image-entete">
+
             <!-- Bloc 1 : Le Sol -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
                     <h2>L'étude agronomique de notre sol 🪱</h2>
-                    <p>Notre atelier céréalier repose sur 9 hectares d'une terre limoneuse au pH de 7,5[cite: 1]. Historiquement en prairies, ce sol possède un taux exceptionnel de matière organique (6,3 %)[cite: 1].</p>
-                    <p>Pour nous assurer que le sol résistera aux fortes pluies, nous avons calculé son Indice de Battance (IB) :</p>
+                    <p>Notre atelier céréalier repose sur 13 à 15 hectares de terres conduites en agriculture biologique stricte, avec zéro intrant phytosanitaire. Le sol, historiquement en prairies, est limoneux avec un pH de 7,5 et possède un taux exceptionnel de matière organique de 6,3 %[cite: 3].</p>
+                    <p>Pour nous assurer que cette terre résistera aux fortes pluies sans se tasser, nous avons calculé son Indice de Battance (IB) :</p>
                     
                     <div class="formule-scientifique">
                         $$IB = \frac{(1,5 \times \% \text{limons fins}) + (0,75 \times \% \text{limons grossiers})}{\% \text{argiles} + (10 \times \% \text{MO})}$$
                     </div>
 
-                    <p>Avec un résultat de 1,034 (bien en dessous du seuil critique de 1,4), notre terre est robuste et poreuse[cite: 1].</p>
+                    <p>Avec un résultat de 1,034 (bien en dessous du seuil critique de 1,4), notre terre est robuste et très poreuse[cite: 3].</p>
                 </div>
             </div>
 
             <!-- Bloc 2 : La Rotation -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>Notre rotation sur 6 ans 🔄</h2>
-                    <p>Sans aucun engrais chimique, notre meilleure arme est la rotation sur nos parcelles de 1,5 hectare[cite: 1] :</p>
+                    <h2>Une rotation régénérative sur 6 ans 🔄</h2>
+                    <p>Sans aucun engrais chimique, notre meilleure méthode pour maintenir la fertilité et casser le cycle des maladies est une longue rotation sur nos parcelles[cite: 3] :</p>
                     <table class="schema-agronomique">
                         <thead>
                             <tr>
@@ -75,17 +79,17 @@
                             <tr>
                                 <td><strong>1 à 3</strong></td>
                                 <td>Luzerne + Dactyle</td>
-                                <td>Nettoie le sol, structure la terre et fixe l'azote naturel[cite: 1].</td>
+                                <td>Nettoie le sol, structure la terre et fixe l'azote naturel[cite: 3].</td>
                             </tr>
                             <tr>
                                 <td><strong>4 et 5</strong></td>
                                 <td>Blé tendre d'hiver</td>
-                                <td>Culture reine pour la boulangerie, exigeante en fertilité[cite: 1].</td>
+                                <td>Culture reine pour la boulangerie, exigeante en fertilité[cite: 3].</td>
                             </tr>
                             <tr>
                                 <td><strong>6</strong></td>
                                 <td>Seigle / Engrain</td>
-                                <td>Cultures très rustiques adaptées aux sols en fin de cycle[cite: 1].</td>
+                                <td>Cultures très rustiques adaptées aux sols en fin de cycle[cite: 3].</td>
                             </tr>
                         </tbody>
                     </table>
@@ -95,21 +99,20 @@
             <!-- Bloc 3 : Fertilité et Récoltes -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>Fertilité et semences paysannes 🌾</h2>
-                    <p>Pour compenser l'exportation des nutriments (phosphore et potassium), nous amendons la terre avec les fumiers compostés de nos élevages[cite: 1]. C'est un cercle vertueux !</p>
-                    <p>Nous semons des "cultures de population", mélangeant des blés rustiques (Renan, Gwen, Geny)[cite: 1]. Grâce à cela, nous visons une production annuelle de 12,5 à 15 tonnes de céréales pour alimenter notre boulangerie[cite: 1].</p>
+                    <h2>Semences paysannes et résilience climatique 🌾</h2>
+                    <p>Pour compenser l'exportation des nutriments, nous amendons la terre avec les fumiers compostés de nos élevages[cite: 3]. Nous semons ensuite des "cultures de population" (un mélange de blés rustiques et anciens comme le Renan, Gwen, Geny)[cite: 3].</p>
+                    <p>Ces variétés anciennes ont un rendement limité (environ 3 tonnes à l'hectare), mais c'est un choix pleinement assumé. Elles sont beaucoup plus résilientes face aux aléas climatiques des années à venir et, surtout, elles offrent un intérêt gustatif et nutritionnel bien supérieur pour notre boulangerie.</p>
                 </div>
             </div>
             
-
-        <!-- GALERIE DE PHOTOS EN BAS DE PAGE -->
+        <!-- GALERIE DE PHOTOS -->
         <section class="galerie-bas-page">
             <img src="../images/cerealesphoto1.jpg" alt="Rotation des cultures">
             <img src="../images/cerealesphoto2.jpg" alt="Gestion de la fertilité">
             <img src="../images/cerealesphoto3.jpg" alt="Récolte des céréales">
         </section>
 
- 	</section> <!-- FIN DE LA SECTION PARALLAX UNIQUE -->
+ 	</section>
         
         <a href="../index.html" class="bouton-retour">↩️ 🗺️ Retour à la carte</a>
     </main>
