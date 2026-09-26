@@ -24,21 +24,26 @@
             color: white;
             text-align: center;
         }
-        .formule-scientifique {
+        .image-rotation {
+            width: 100%;
+            max-width: 250px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+        .texte-exergue {
             text-align: center;
-            margin: 15px 0;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 5px;
-            color: #333;
-            overflow-x: auto;
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #2e5d32;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>La Culture des Céréales</h1>
+        <h1>La Culture Céréalière et la Meunerie</h1>
     </header>
 
     <main class="page-contenu">
@@ -47,26 +52,21 @@
             
             <img src="../images/cereales.png" alt="Illustration des champs de céréales" class="image-entete">
 
-            <!-- Bloc 1 : Le Sol -->
+        <!-- ==============================================
+             SECTION 1 : La culture céréalière et Rotation
+        =============================================== -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>L'étude agronomique de notre sol 🪱</h2>
-                    <p>Notre atelier céréalier repose sur 13 à 15 hectares de terres conduites en agriculture biologique stricte, avec zéro intrant phytosanitaire. Le sol, historiquement en prairies, est limoneux avec un pH de 7,5 et possède un taux exceptionnel de matière organique de 6,3 %[cite: 3].</p>
-                    <p>Pour nous assurer que cette terre résistera aux fortes pluies sans se tasser, nous avons calculé son Indice de Battance (IB) :</p>
                     
-                    <div class="formule-scientifique">
-                        $$IB = \frac{(1,5 \times \% \text{limons fins}) + (0,75 \times \% \text{limons grossiers})}{\% \text{argiles} + (10 \times \% \text{MO})}$$
-                    </div>
+                    <p class="texte-exergue">La boulangerie-paysanne : démarche où l'artisan maîtrise toute la chaîne de production, depuis les semis de céréales, en passant par la production de sa farine et de son pain, jusqu'à la vente des de ses produits.</p>
 
-                    <p>Avec un résultat de 1,034 (bien en dessous du seuil critique de 1,4), notre terre est robuste et très poreuse[cite: 3].</p>
-                </div>
-            </div>
+                    <h2>La culture céréalière 🌾</h2>
+                    <p>Les céréales cultivées sur les <strong>15 hectares</strong> de la ferme sont le blé tendre (ou froment), le seigle et le petit épeautre. Dans une démarche agroécologique, les cultures sont organisées en <strong>rotation sur 6 ans</strong>.</p>
+                    
+                   
 
-            <!-- Bloc 2 : La Rotation -->
-            <div class="conteneur-texte">
-                <div class="texte-explicatif translucide">
-                    <h2>Une rotation régénérative sur 6 ans 🔄</h2>
-                    <p>Sans aucun engrais chimique, notre meilleure méthode pour maintenir la fertilité et casser le cycle des maladies est une longue rotation sur nos parcelles[cite: 3] :</p>
+                    <p>Après 2 années de culture de blé et une année de culture seigle (ou petit épeautre), 3 années consécutives de luzerne/dactyle permettent de régénérer le sol. Ces dernières sont aussi excellentes pour l'alimentation des vaches, qui viendront fertiliser le terrain en échange.</p>
+
                     <table class="schema-agronomique">
                         <thead>
                             <tr>
@@ -77,34 +77,60 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>1 à 3</strong></td>
-                                <td>Luzerne + Dactyle</td>
-                                <td>Nettoie le sol, structure la terre et fixe l'azote naturel[cite: 3].</td>
+                                <td><strong>1 et 2</strong></td>
+                                <td>Blé</td>
+                                <td>Culture principale cultivée sur 2 années pour les besoins de la boulangerie.</td>
                             </tr>
                             <tr>
-                                <td><strong>4 et 5</strong></td>
-                                <td>Blé tendre d'hiver</td>
-                                <td>Culture reine pour la boulangerie, exigeante en fertilité[cite: 3].</td>
+                                <td><strong>3</strong></td>
+                                <td>Seigle (ou petit épeautre)</td>
+                                <td>Une année de culture avant le retour de la prairie.</td>
                             </tr>
                             <tr>
-                                <td><strong>6</strong></td>
-                                <td>Seigle / Engrain</td>
-                                <td>Cultures très rustiques adaptées aux sols en fin de cycle[cite: 3].</td>
+                                <td><strong>4 à 6</strong></td>
+                                <td>Luzerne / Dactyle</td>
+                                <td>3 années consécutives pour régénérer le sol et nourrir les vaches (qui fertilisent en échange).</td>
                             </tr>
                         </tbody>
                     </table>
+
+ <!-- Ligne ajoutée pour l'image de la rotation -->
+                    <img src="../images/rotation.png" alt="Schéma circulaire de la rotation" class="image-rotation">
+
+
                 </div>
             </div>
 
-            <!-- Bloc 3 : Fertilité et Récoltes -->
+        <!-- ==============================================
+             SECTION 2 : Rendements et Semences
+        =============================================== -->
             <div class="conteneur-texte">
                 <div class="texte-explicatif translucide">
-                    <h2>Semences paysannes et résilience climatique 🌾</h2>
-                    <p>Pour compenser l'exportation des nutriments, nous amendons la terre avec les fumiers compostés de nos élevages[cite: 3]. Nous semons ensuite des "cultures de population" (un mélange de blés rustiques et anciens comme le Renan, Gwen, Geny)[cite: 3].</p>
-                    <p>Ces variétés anciennes ont un rendement limité (environ 3 tonnes à l'hectare), mais c'est un choix pleinement assumé. Elles sont beaucoup plus résilientes face aux aléas climatiques des années à venir et, surtout, elles offrent un intérêt gustatif et nutritionnel bien supérieur pour notre boulangerie.</p>
+                    <h2>Le blé population 🌱</h2>
+                    <p>Les céréales de différentes variétés, produites et re-semées chaque année, s'adaptent au terroir et forment ce qu'on appelle un <strong>blé population</strong>. Le rendement est d'environ <strong>3,5 T/ha</strong>, ce qui est relativement faible mais qui est compensé par une grande résistance aux maladies, sécheresses, etc...</p>
+                    <p>Un premier test sur une mini parcelle a été mené cette année qui s'est révélé très concluant. Nos premiers grains sont prêts à être analysés afin de connaître leur qualité.</p>
                 </div>
             </div>
             
+        <!-- ==============================================
+             SECTION 3 : La Meunerie
+        =============================================== -->
+            <div class="conteneur-texte">
+                <div class="texte-explicatif translucide">
+                    <h2>La meunerie ⚙️</h2>
+                    <p>Une fois récoltées et stockées, les céréales alimentent la <strong>meunerie</strong> (ou minoterie) pour les besoins en farine de la boulangerie.</p>
+                    <p>Les grains passent par <strong>une trieuse</strong>, qui écarte les grains non conforme et les résidus de récolte. Ensuite, <strong>la brosse à blé</strong> permet d'enlever les poussières de la surface des grains.</p>
+                    <p>Gravitairement, le grain est enfin conduit dans le <strong>moulin</strong>. Ce dernier, de type <strong>Astrier</strong>, déroule le grain entre deux meules de pierre qui broyent le son (enveloppe extérieure) et l'albumen (la farine). En sortie, un tamis rotatif sépare la farine blanche du son. Plus le tamis est fin, mieux la farine est séparée du son et est blanche (T45, T65,...). A contrario, plus le tamis a des mailles larges, plus le son sera mélangé à la farine et formera une farine plus complète (T80, T110, T130,...).</p>
+                    <p>Le moulin de la ferme, de diamètre 50, a un rendement de <strong>15 kg/h</strong> et un taux d'extraction (farine/son) de <strong>80%</strong>.</p>
+                    <p>La farine produite est stockée une semaine avant son utilisation à la boulangerie. On dit qu'elle "planche" pour améliorer ses propriétés boulangères.</p>
+
+ <!-- Ligne ajoutée pour l'image de la rotation -->
+                    <img src="../images/moulin.png" alt="Schéma du moulin" class="image-rotation">
+
+
+                </div>
+            </div>
+
         <!-- GALERIE DE PHOTOS -->
         <section class="galerie-bas-page">
             <img src="../images/cerealesphoto1.jpg" alt="Rotation des cultures">
